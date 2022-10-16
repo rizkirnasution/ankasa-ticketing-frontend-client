@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Profile from "../pages/Profile";
 import MyBooking from "../pages/MyBooking";
+import Login from "../pages/Login";
 
 export default function router() {
   return (
@@ -24,7 +25,14 @@ export default function router() {
             // </PrivateRoute>
           }
         />
-
+          <Route
+          path="/login"
+          element={
+            // <PublicRoute>
+            <Login />
+            // </PublicRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
