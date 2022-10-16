@@ -1,9 +1,9 @@
-import logo from "./logo.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 import "./assets/styles/utility.css";
-import { Fragment } from "react";
+import React from "react";
 import Routers from "./router/index";
+import { Fragment } from "react";
 
 function App() {
   return (
