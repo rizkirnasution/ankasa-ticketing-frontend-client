@@ -1,0 +1,417 @@
+body {
+    margin: 0px;
+    padding: 0px;
+  }
+  .auth .background {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+  .auth .background .image {
+    height: 100vh;
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .auth .background .image::after {
+    content: "";
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #2395ff;
+  }
+  .auth .background .logo {
+    z-index: 99;
+    height: 500px;
+    width: 463px;
+    background-image: url("../icons/logo.svg");
+    background-repeat: no-repeat;
+    background-size: auth;
+    background-position: center;
+    position: absolute;
+  }
+  .auth .background .jumbotron {
+    height: 100vh;
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .auth .background .jumbotron .form-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 350px;
+    margin-top: 30px;
+    margin-bottom: 90px;
+  }
+  .auth .background .jumbotron .form-title .icon {
+    background-image: url("../icons/icon.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 27px;
+    width: 40px;
+  }
+  .auth .background .jumbotron .form-title .text {
+    font-size: 30px;
+  }
+  .auth .background .jumbotron .form-input {
+    display: flex;
+    flex-direction: column;
+  }
+  .auth .background .jumbotron .form-input .input {
+    border: none;
+    border-bottom: 2px solid #aaaaaa;
+    margin-left: 9px;
+    height: 45px;
+    width: 350px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  .auth .background .jumbotron .form-input .input:focus {
+    outline-style: none;
+  }
+  .auth .background .jumbotron .form-input h1 {
+    font-weight: bold;
+  }
+  .auth .background .jumbotron .check {
+    display: flex;
+    align-items: center;
+    width: 350px;
+  }
+  .auth .background .jumbotron .check .checkbox {
+    height: 15px;
+    width: 15px;
+    background-color: #2395ff;
+    margin-right: 10px;
+    outline: #2395ff;
+  }
+  .auth .background .jumbotron .form-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .auth .background .jumbotron .password {
+    background-image: url("../icons/pass.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+    margin-left: -35px;
+    width: 35px;
+    height: 35px;
+    border: none;
+  }
+  .auth .background .jumbotron .password:focus {
+    outline-style: none;
+  }
+  .auth .background .jumbotron .button {
+    width: 350px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #2395ff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .auth .background .jumbotron .button2 {
+    width: 350px;
+    height: 40px;
+    border: 2px solid #2395ff;
+    border-radius: 5px;
+    color: #2395ff;
+    background-color: white;
+    margin-top: 20px;
+  }
+  .auth .background .jumbotron .line {
+    height: 1px;
+    width: 300px;
+    margin: 10px;
+    background-color: #aaaaaa;
+  }
+  .auth .background .jumbotron .form-login a img {
+    height: 100px;
+    width: 100px;
+    padding: 0px;
+  }
+  .auth .background .jumbotron .form-login .google {
+    background-image: url("../images/google.png");
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    width: 80px;
+    height: 40px;
+    border: 2px solid #2395ff;
+    border-radius: 5px;
+    color: #2395ff;
+    background-color: white;
+    margin-top: 20px;
+    margin-right: 10px;
+  }
+  .auth .background .jumbotron .form-login .facebook {
+    background-image: url("../images/facebook.svg");
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: center;
+    width: 80px;
+    height: 40px;
+    border: 2px solid #2395ff;
+    border-radius: 5px;
+    color: #2395ff;
+    background-color: white;
+    margin-top: 20px;
+  }
+  .auth .jumbotron {
+    height: 50vh;
+    position: relative;
+    display: flex;
+    margin-left: 10px;
+  }
+  .auth .jumbotron .form {
+    width: 25%;
+  }
+  .auth .jumbotron .form .form-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 350px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .auth .jumbotron .form .form-title .icon {
+    background-image: url("../icons/icon.svg");
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    height: 27px;
+    width: 40px;
+  }
+  .auth .jumbotron .form .form-title .text {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .auth .jumbotron .form h5 {
+    color: #6b6b6b;
+  }
+  .auth .jumbotron .form ul {
+    list-style: none;
+    margin-left: -30px;
+  }
+  .auth .jumbotron .form ul li {
+    margin-bottom: 5px;
+  }
+  .auth .jumbotron .form .images {
+    display: flex;
+    flex-direction: column;
+  }
+  .auth .jumbotron .form .images img {
+    width: 200px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  .auth .jumbotron .form .form-icon img {
+    margin: 10px;
+    margin-bottom: 200px;
+  }
+  .auth .bottom .form-location {
+    display: flex;
+  }
+  .auth .bottom {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+  .auth .bottom .form-location .icon {
+    background-image: url("../icons/vector-lct.svg");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
+    height: 27px;
+    width: 40px;
+  }
+  .auth .bottom small {
+    margin-right: 800px;
+  }
+  .auth .navbar {
+    z-index: 100;
+  }
+  .auth .navbar-brand .form-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .auth .navbar-brand .form-title .icon {
+    background-image: url("../icons/icon.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 27px;
+    width: 40px;
+  }
+  .auth .navbar-brand .form-title .text {
+    font-size: 30px;
+  }
+  .auth .form-search {
+    margin-left: 50px;
+    width: 280px;
+    height: 50px;
+    background-color: #efefef;
+    display: flex;
+    border-radius: 15px;
+  }
+  .auth .form-search .icon {
+    background-image: url("../icons/icon-search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+  }
+  .auth .form-search .input {
+    font-family: airbnb;
+    background-color: #efefef;
+    border-style: none;
+    width: 250px;
+    border-radius: 15px;
+  }
+  .auth .form-search .input:focus {
+    outline-style: none;
+  }
+  .auth .form-page {
+    display: flex;
+  }
+  .auth .form-page .text {
+    margin-left: 30px;
+  }
+  .auth .form-user {
+    display: flex;
+    align-items: center;
+    margin-left: 400px;
+  }
+  .auth .form-user .icon-message {
+    background-image: url("../icons/message.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+  }
+  .auth .form-user .icon-notification {
+    background-image: url("../icons/notificatiton.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+  }
+  .auth .form-user .profile {
+    width: 60px;
+    height: 60px;
+    padding: 1px;
+    border: 2px solid #2395ff;
+    border-radius: 30px;
+  }
+  @media screen and (max-width: 1200px) {
+    .auth .form-user {
+      margin-left: 245px;
+    }
+  }
+  @media screen and (max-width: 1045px) {
+    .auth .form-user {
+      margin-left: 215px;
+    }
+    .auth .jumbotron .form .form-title {
+      width: 169px;
+    }
+    .auth .bottom small {
+      margin-right: 517px;
+    }
+  }
+  @media screen and (max-width: 890px) {
+    .auth .background .image {
+      display: none;
+    }
+    .auth .background .jumbotron {
+      width: 100%;
+    }
+    .auth .form-user {
+      margin-left: 73px;
+    }
+    .auth .jumbotron .form .form-title {
+      width: 169px;
+    }
+    .auth .bottom small {
+      margin-right: 517px;
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .auth .background .image {
+      display: none;
+    }
+    .auth .background .jumbotron {
+      width: 100%;
+    }
+    .auth .image {
+      display: none;
+    }
+    .auth .background {
+      width: 100%;
+    }
+    .auth .jumbotron {
+      flex-direction: column;
+    }
+    .auth .jumbotron .form {
+      width: 100%;
+    }
+    .auth .jumbotron .form .images {
+      flex-direction: row;
+    }
+    .auth .jumbotron .form .images img {
+      width: 180px;
+      height: 60px;
+      margin-right: 10px;
+    }
+    .auth .jumbotron .form ul {
+      display: flex;
+    }
+    .auth .jumbotron .form ul li {
+      margin: 0px 10px 0px 10px;
+    }
+    .auth .jumbotron .form .form-icon img {
+      margin-bottom: 20px;
+    }
+    .auth .bottom small {
+      margin-right: 0px;
+      font-size: large;
+    }
+    .auth .bottom {
+      display: flex;
+      height: 50vh;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .auth .form-page {
+      margin-left: 20px;
+      margin-top: 30px;
+    }
+    .auth .form-user {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0px;
+    }
+  }
