@@ -5,7 +5,7 @@ import "../assets/styles/auth.css";
 import { register } from "../redux/actions/auth";
 import Swal from "sweetalert2";
 
-export default function Register() {
+export default function Signup() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -16,7 +16,7 @@ export default function Register() {
     password: "",
   });
   useEffect(() => {
-    document.title = `${process.env.REACT_APP_APP_NAME} - Register`;
+    document.title = `${process.env.REACT_APP_APP_NAME} - Signup`;
     window.scrollTo(0, 0);
   }, []);
   const onSubmitted = (e) => {

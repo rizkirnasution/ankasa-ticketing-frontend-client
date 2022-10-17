@@ -1,19 +1,19 @@
 import React from "react";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from "../pages/Profile";
 import MyBooking from "../pages/MyBooking";
 import Login from "../pages/Login";
-import Home from "../pages/Home"
+import Home from "../pages/Home";
 
 export default function router() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route
+        <Route
           path="/"
           element={
             // <PrivateRoute>
-                <Home />
+            <Home />
             //  </PrivateRoute>
           }
         />
@@ -22,7 +22,7 @@ export default function router() {
           path="/mybooking"
           element={
             // <PrivateRoute>
-                <MyBooking />
+            <MyBooking />
             //  </PrivateRoute>
           }
         />
@@ -31,12 +31,20 @@ export default function router() {
           path="/profile"
           element={
             // <PrivateRoute>
-                <Profile />
+            <Profile />
             // </PrivateRoute>
           }
         />
-          <Route
+        <Route
           path="/login"
+          element={
+            // <PublicRoute>
+            <Login />
+            // </PublicRoute>
+          }
+        />
+        <Route
+          path="/signup"
           element={
             // <PublicRoute>
             <Login />
