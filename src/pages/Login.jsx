@@ -1,33 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Background from "../components/Background";
 import "../assets/styles/auth.css";
-import { register } from "../redux/actions/auth";
+import { login } from "../redux/actions/auth";
 import Swal from "sweetalert2";
 
-export default function Register() {
+export default function Login() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({
-    name: "",
     email: "",
     password: "",
   });
   useEffect(() => {
-    document.title = `${process.env.REACT_APP_APP_NAME} - Register`;
+    document.title = `${process.env.REACT_APP_APP_NAME} - Login`;
     window.scrollTo(0, 0);
   }, []);
   const onSubmitted = (e) => {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    register(form, setErrors).then((res) => {
+    login(form, setErrors).then((res) => {
       if (res === true) {
         Swal.fire({
           title: "Success",
-          text: "you success to register, now check your email to acctivate your account",
+          text: "Login Success",
           icon: "success",
         });
         return navigate("/");
@@ -35,6 +34,7 @@ export default function Register() {
     });
     setIsLoading(false);
   };
+
   return (
     <>
       <div className="auth">
@@ -47,13 +47,7 @@ export default function Register() {
             </div>
             <form onSubmit={(e) => onSubmitted(e)}>
               <div className="form-input">
-                <h1>Register</h1>
-                <input
-                  type="text"
-                  className="input"
-                  placeholder=" Enter full name"
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                />
+                <h1>Login</h1>
                 <input
                   type="email"
                   className="input"
@@ -79,7 +73,10 @@ export default function Register() {
                 </div>
               </div>
               {errors.length > 0 && (
-                <div className="alert alert-danger mx-50" style={{maxWidth: '350px',marginLeft: '10px'}}>
+                <div
+                  className="alert alert-danger mx-0"
+                  style={{ maxWidth: "350px", marginLeft: "10px" }}
+                >
                   <ul className="m-0">
                     {errors.map((error, index) => (
                       <li key={index}>{error.msg}</li>
@@ -87,79 +84,6 @@ export default function Register() {
                   </ul>
                 </div>
               )}
-              {isLoading ? (
-                <button
-                  className="btn btn-success btn-lg ms-2"
-                  type="button"
-                  disabled
-                >
-                  <span
-                    className="spinner-border spinner-border-sm"
-                    role="status"
-                    aria-hidden="true"
-                  ></span>{" "}
-                  Loading...
-                </button>
-              ) : (
-                <button type="submit" className="button">
-                  Sign Up
-                </button>
-              )}
-            </form>
-            <label className="check">
-              <input type="checkbox" className="checkbox" />
-              <div className="text">Accept terms and condition</div>
-            </label>
-            <div className="line"></div>
-            <div className="text">Already have an account?</div>
-            <input
-              type="button"
-              className="button2"
-              value="Sign In"
-              onClick={() => navigate("/login")}
-            />
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
-
-export default function Login() {
-  const isLoading = false;
-  useEffect(() => {
-    document.title = `${process.env.REACT_APP_APP_NAME} - Login`;
-    window.scrollTo(0, 0);
-  }, []);
-
-  return (
-    <>
-      <div className="auth">
-        <div className="background">
-          <Background />
-          <div className="jumbotron">
-            <div className="form-title">
-              <div className="icon"></div>
-              <div className="text">Ankasa</div>
-            </div>
-            <form>
-              <div className="form-input">
-                <h1>Login</h1>
-                <input
-                  type="email"
-                  className="input"
-                  placeholder=" Enter email address"
-                />
-                <div className="form-password">
-                  <input className="input" placeholder=" Enter your password" />
-                  <button
-                    type="button"
-                    className="password"
-                    onClick={() => {}}
-                  ></button>
-                </div>
-              </div>
-
               {isLoading ? (
                 <button
                   className="btn btn-success btn-lg ms-2"
@@ -183,7 +107,12 @@ export default function Login() {
             <Link to="/reset">Tap here for reset</Link>
             <div className="line"></div>
             <div className="text">Did you don't have account?</div>
-            <input type="button" className="button2" value="Register" />
+            <input
+              type="button"
+              className="button2"
+              value="Register"
+              onClick={() => navigate("/register")}
+            />
             <div className="line"></div>
             <div className="text">or sign in with</div>
             <div className="form-login">
