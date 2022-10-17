@@ -1,0 +1,48 @@
+.circleCard {
+  position: relative;
+}
+
+.circleCard .outline {
+  width: 160px;
+  height: 160px;
+  padding: 10px;
+  border: 5px solid #fff;
+  border-radius: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circleCard .img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 75px;
+}
+
+.circleCard .titleDestination {
+  margin-top: 25px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+}
+
+@media screen and (max-width: 576px) {
+  .circleCard {
+    margin-right: 20px;
+  }
+  .circleCard .outline {
+    width: 70px;
+    height: 70px;
+    border: 3px solid #fff;
+  }
+  .circleCard .img {
+    width: 50px;
+    height: 50px;
+  }
+  .circleCard .titleDestination {
+    margin-top: 12px;
+    font-size: 12px;
+  }
+}

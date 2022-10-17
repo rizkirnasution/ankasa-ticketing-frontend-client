@@ -1,0 +1,417 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+.background {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.background .image {
+  height: 100vh;
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.background .image::after {
+  content: "";
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #2395ff;
+}
+.background .logo {
+  z-index: 99;
+  height: 500px;
+  width: 463px;
+  background-image: url("../icons/logo.svg");
+  background-repeat: no-repeat;
+  background-size: ian;
+  background-position: center;
+  position: absolute;
+}
+.background .jumbotron {
+  height: 100vh;
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.background .jumbotron .form-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 350px;
+  margin-top: 30px;
+  margin-bottom: 90px;
+}
+.background .jumbotron .form-title .icon {
+  background-image: url("../icons/icon.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 27px;
+  width: 40px;
+}
+.background .jumbotron .form-title .text {
+  font-size: 30px;
+}
+.background .jumbotron .form-input {
+  display: flex;
+  flex-direction: column;
+}
+.background .jumbotron .form-input .input {
+  border: none;
+  border-bottom: 2px solid #aaaaaa;
+  margin-left: 9px;
+  height: 45px;
+  width: 350px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.background .jumbotron .form-input .input:focus {
+  outline-style: none;
+}
+.background .jumbotron .form-input h1 {
+  font-weight: bold;
+}
+.background .jumbotron .check {
+  display: flex;
+  align-items: center;
+  width: 350px;
+}
+.background .jumbotron .check .checkbox {
+  height: 15px;
+  width: 15px;
+  background-color: #2395ff;
+  margin-right: 10px;
+  outline: #2395ff;
+}
+.background .jumbotron .form-password {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.background .jumbotron .password {
+  background-image: url("../icons/pass.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+  margin-left: -35px;
+  width: 35px;
+  height: 35px;
+  border: none;
+}
+.background .jumbotron .password:focus {
+  outline-style: none;
+}
+.background .jumbotron .button {
+  width: 350px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #2395ff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.background .jumbotron .button2 {
+  width: 350px;
+  height: 40px;
+  border: 2px solid #2395ff;
+  border-radius: 5px;
+  color: #2395ff;
+  background-color: white;
+  margin-top: 20px;
+}
+.background .jumbotron .line {
+  height: 1px;
+  width: 300px;
+  margin: 10px;
+  background-color: #aaaaaa;
+}
+.background .jumbotron .form-login a img {
+  height: 100px;
+  width: 100px;
+  padding: 0px;
+}
+.background .jumbotron .form-login .google {
+  background-image: url("../images/google.png");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  width: 80px;
+  height: 40px;
+  border: 2px solid #2395ff;
+  border-radius: 5px;
+  color: #2395ff;
+  background-color: white;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+.background .jumbotron .form-login .facebook {
+  background-image: url("../images/facebook.svg");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center;
+  width: 80px;
+  height: 40px;
+  border: 2px solid #2395ff;
+  border-radius: 5px;
+  color: #2395ff;
+  background-color: white;
+  margin-top: 20px;
+}
+.jumbotron {
+  height: 50vh;
+  position: relative;
+  display: flex;
+  margin-left: 10px;
+}
+.jumbotron .form {
+  width: 25%;
+}
+.jumbotron .form .form-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 350px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.jumbotron .form .form-title .icon {
+  background-image: url("../icons/icon.svg");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  height: 27px;
+  width: 40px;
+}
+.jumbotron .form .form-title .text {
+  font-size: 20px;
+  font-weight: bold;
+}
+.jumbotron .form h5 {
+  color: #6b6b6b;
+}
+.jumbotron .form ul {
+  list-style: none;
+  margin-left: -30px;
+}
+.jumbotron .form ul li {
+  margin-bottom: 5px;
+}
+.jumbotron .form .images {
+  display: flex;
+  flex-direction: column;
+}
+.jumbotron .form .images img {
+  width: 200px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+.jumbotron .form .form-icon img {
+  margin: 10px;
+  margin-bottom: 200px;
+}
+.bottom .form-location {
+  display: flex;
+}
+.bottom {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+.bottom .form-location .icon {
+  background-image: url("../icons/vector-lct.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+  height: 27px;
+  width: 40px;
+}
+.bottom small {
+  margin-right: 800px;
+}
+.navbar {
+  z-index: 100;
+}
+.navbar-brand .form-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+}
+.navbar-brand .form-title .icon {
+  background-image: url("../icons/icon.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 27px;
+  width: 40px;
+}
+.navbar-brand .form-title .text {
+  font-size: 30px;
+}
+.form-search {
+  margin-left: 50px;
+  width: 280px;
+  height: 50px;
+  background-color: #efefef;
+  display: flex;
+  border-radius: 15px;
+}
+.form-search .icon {
+  background-image: url("../icons/icon-search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60px;
+  height: 60px;
+}
+.form-search .input {
+  font-family: airbnb;
+  background-color: #efefef;
+  border-style: none;
+  width: 250px;
+  border-radius: 15px;
+}
+.form-search .input:focus {
+  outline-style: none;
+}
+.form-page {
+  display: flex;
+}
+.form-page .text {
+  margin-left: 30px;
+}
+.form-user {
+  display: flex;
+  align-items: center;
+  margin-left: 400px;
+}
+.form-user .icon-message {
+  background-image: url("../icons/message.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60px;
+  height: 60px;
+}
+.form-user .icon-notification {
+  background-image: url("../icons/notificatiton.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60px;
+  height: 60px;
+}
+.form-user .profile {
+  width: 60px;
+  height: 60px;
+  padding: 1px;
+  border: 2px solid #2395ff;
+  border-radius: 30px;
+}
+@media screen and (max-width: 1200px) {
+  .form-user {
+    margin-left: 245px;
+  }
+}
+@media screen and (max-width: 1045px) {
+  .form-user {
+    margin-left: 215px;
+  }
+  .jumbotron .form .form-title {
+    width: 169px;
+  }
+  .bottom small {
+    margin-right: 517px;
+  }
+}
+@media screen and (max-width: 890px) {
+  .background .image {
+    display: none;
+  }
+  .background .jumbotron {
+    width: 100%;
+  }
+  .form-user {
+    margin-left: 73px;
+  }
+  .jumbotron .form .form-title {
+    width: 169px;
+  }
+  .bottom small {
+    margin-right: 517px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .background .image {
+    display: none;
+  }
+  .background .jumbotron {
+    width: 100%;
+  }
+  .image {
+    display: none;
+  }
+  .background {
+    width: 100%;
+  }
+  .jumbotron {
+    flex-direction: column;
+  }
+  .jumbotron .form {
+    width: 100%;
+  }
+  .jumbotron .form .images {
+    flex-direction: row;
+  }
+  .jumbotron .form .images img {
+    width: 180px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  .jumbotron .form ul {
+    display: flex;
+  }
+  .jumbotron .form ul li {
+    margin: 0px 10px 0px 10px;
+  }
+  .jumbotron .form .form-icon img {
+    margin-bottom: 20px;
+  }
+  .bottom small {
+    margin-right: 0px;
+    font-size: large;
+  }
+  .bottom {
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .form-page {
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+  .form-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+  }
+}

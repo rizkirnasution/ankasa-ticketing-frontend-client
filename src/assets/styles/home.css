@@ -1,0 +1,494 @@
+.home .boxOfTitle {
+  display: flex;
+}
+
+.home .titleBox {
+  padding: 30px 0px 0px 80px;
+}
+
+.home .homeTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #414141;
+}
+
+.home .flightTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #2395ff;
+  margin-left: 10px;
+}
+
+.home .homeText {
+  color: #6b6b6b;
+  font-weight: 200;
+}
+
+.home .bgImg {
+  width: 850px;
+  height: 450px;
+  object-fit: cover;
+  border-end-end-radius: 50px;
+  margin-top: 90px;
+  margin-left: -12px;
+}
+
+.home .boxOfMediumImg {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.home .bgMediumImg {
+  width: 350px;
+  height: 400px;
+  object-fit: cover;
+  border-top-left-radius: 50px;
+}
+
+.home .boxOfCard {
+  position: absolute;
+  top: 8rem;
+  right: 200px;
+  width: 350px;
+  height: 575px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 1px 1px 25px -5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 1px 25px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 25px -5px rgba(0, 0, 0, 0.75);
+}
+
+.home .object {
+  margin-top: 100px;
+  width: 200px;
+  height: 200px;
+  margin-left: 50px;
+}
+
+.home .mediumText {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.largeText {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.home .smMarginTop {
+  margin-top: 10px;
+}
+
+.home .mMarginTop {
+  margin-top: 20px;
+}
+
+.home .boxOfDestination {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  height: 80px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 1px 1px 13px -5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 1px 13px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 13px -5px rgba(0, 0, 0, 0.75);
+}
+
+.home .textFrom {
+  color: rgba(151, 151, 151, 1);
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+}
+
+.home .inputDestination {
+  width: 120px;
+  border: none;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  font-weight: 600;
+}
+
+.home .inputDestination:focus {
+  outline: none;
+  color: #2395ff;
+}
+
+.home .boxDetailDestination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home .titleDestionation {
+  max-width: 80px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: -5px;
+  color: rgba(0, 0, 0, 1);
+  font-family: "Poppins", sans-serif;
+}
+
+.home .textDestionation {
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  margin-top: -8px;
+}
+
+.home .recently {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.home .textRecently {
+  margin-top: 10px;
+  color: #2395ff;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.home .transfer {
+  margin-top: -10px;
+  width: 40px;
+  height: 40px;
+}
+
+.home .boxFinalExam {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.home .btnSend {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2395ff;
+  border: none;
+  width: 150px;
+  padding: 10px;
+  color: #ffffff;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+
+.home .actionTitle {
+  color: rgba(107, 107, 107, 1);
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.home .date {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+}
+
+.home .person {
+  width: 140px;
+  border-radius: 5px;
+  padding: 8px 0 8px 15px;
+  color: #000;
+  font-weight: 600;
+  border: rgba(221, 221, 221, 1) solid 2px;
+}
+
+.home .person:focus {
+  outline: #2395ff solid 2px;
+  border: none;
+}
+
+.home .boxOfAdult {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home .boxOfRadio {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home .btnSearch {
+  width: 100%;
+  margin-top: 20px;
+  height: 45px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2395ff;
+  color: #ffffff;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.home .textRadio {
+  font-size: 14px;
+}
+
+.home .containerItems {
+  margin-top: 150px;
+  padding: 0 80px 0 80px;
+}
+
+.home .textTrendings {
+  color: #2395ff;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+
+.home .titleTrendings {
+  font-family: "Poppins", sans-serif;
+}
+
+.home .tableTrendings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home .viewLink {
+  text-decoration: none;
+  color: rgba(35, 149, 255, 1);
+}
+
+.home .trendingsBox {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home .topContainer {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home .boxTop {
+  background-color: rgba(35, 149, 255, 1);
+  width: 1170px;
+  height: 550px;
+  border-radius: 50px;
+}
+
+.home .vector {
+  position: absolute;
+  background-repeat: no-repeat;
+  margin-top: 205px;
+}
+
+.home .boxTopCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home .boxOfTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px 0 50px 0;
+}
+
+.home .titleOfTop {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 6px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.home .textOfTop {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+.home .containerCard {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 100%;
+  overflow-y: scroll;
+  margin-top: -20px;
+}
+
+.home .containerCard::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0;
+}
+
+.home .margin {
+  margin: 0px 10px 0px 10px;
+}
+
+.home .containerBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.home .boxOfBtn {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home .btnPrevious {
+  width: 68px;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
+.home .btnNextBlue {
+  width: 68px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: none;
+}
+
+.home .btnImg {
+  width: 25px;
+  height: 25px;
+}
+
+@media screen and (max-width: 576px) {
+  .home .object {
+    margin-left: -50px !important;
+    width: 50px;
+    height: 50px;
+  }
+  .home .homeTitle {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+  .home .flightTitle {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+  .home .boxOfCard {
+    position: absolute;
+    top: 250px;
+    right: 100px;
+    width: 350px;
+    height: 575px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    z-index: 10;
+  }
+  .home .titleBox {
+    padding: 0px 0px 0px 0px;
+    margin: -20px 0px 0px 15px;
+  }
+  .home .bgImg {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-end-end-radius: 50px;
+    margin-top: 50px;
+    margin-left: -12px;
+  }
+  .home .boxOfMediumImg {
+    position: absolute;
+    right: 0px;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home .bgMediumImg {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 50px;
+  }
+
+  .home .object {
+    margin-top: 450px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .home .containerItems {
+    position: relative;
+    margin-top: 450px;
+    padding: 0 0px 0 20px;
+  }
+
+  .home .topContainer {
+    margin-top: 100px;
+  }
+
+  .home .boxTop {
+    position: relative;
+    background-color: rgba(35, 149, 255, 1);
+    width: 100%;
+    height: 380px;
+    border-radius: 20px;
+  }
+
+  .home .titleOfTop {
+    margin-top: -20px;
+  }
+
+  .home .textOfTop {
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  .home .trendingsBox {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    max-width: 480px;
+    margin-top: 50px;
+    overflow-y: scroll;
+  }
+
+  .home .vector {
+    width: 320px;
+    bottom: 0;
+  }
+
+  .home .containerCard {
+    max-width: 480px;
+    overflow-y: scroll;
+    margin-top: -20px;
+  }
+
+  .home .boxOfDestination {
+    display: flex;
+    height: 80px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 13px -5px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 1px 13px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 13px -5px rgba(0, 0, 0, 0.75);
+  }
+}
