@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import "../assets/styles/landing.css";
-import { Link, useNavigate } from "react-router-dom";
-import { Zoom, Slide } from "react-awesome-reveal";
+import React from "react";
+import "../assets/styles/home.css";
+import { Link } from "react-router-dom";
+import { Zoom, Slide, Fade } from "react-awesome-reveal";
 
 import bgHome from "../assets/images/home_bg.jpg";
 import object from "../assets/images/object.svg";
@@ -11,18 +10,13 @@ import arrow from "../assets/icons/arrow.svg";
 import logo from "../assets/images/logo.svg";
 import btnBack from "../assets/icons/btnBack.svg";
 import btnPrev from "../assets/icons/previous.svg";
-import Card from "../components/Card";
-import CircleCard from "../components/CircleCard";
 import vector from "../assets/images/vector.svg";
 import Tokyo from "../assets/images/tokyo.jpg";
 
-import {
-  getDestination,
-  getOldDestination,
-} from "../redux/actions/destination";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { setPassenger } from "../redux/actions/stock";
+import Card from "../components/Card";
+import CircleCard from "../components/CircleCard";
 
 export default function Landing() {
   return (
@@ -51,97 +45,89 @@ export default function Landing() {
             </div>
           </div>
         </div>
-        <Slide top>
+        <Fade triggerOnce>
           <div className="boxOfCard">
-            <div>
-              <h5 className="mediumText">Hey,</h5>
-              <h4 className="largeText smMarginTop">Where you want to go?</h4>
-              <div className="recently mMarginTop">
-                <h5 className="textRecently">Recently Searched</h5>
-                <img src={btnBack} alt="" className="btnNext" />
-              </div>
-              <div className="boxOfDestination">
-                <p className="textFrom">From</p>
-                <div className="row boxDetailDestination minMarginTop">
-                  <input placeholder="starting" className="inputDestination" />
-                  {/* <p className="textDestionation">Indonesia</p> */}
-                  {/* <div className="boxOfIcon"> */}
-                  <img src={iTransfer} alt="transfer" className="transfer" />
-                  {/* </div> */}
-                  <input
-                    placeholder="destination"
-                    className="inputDestination"
-                  />
-                  {/* <p className="textDestionation">Japan</p> */}
-                </div>
-              </div>
-
-              <button className="btnSend">
-                <img src={logo} alt="logo" />
-                One way
-              </button>
-              <h5 className="actionTitle">How many person?</h5>
-              <div className="boxOfAdult">
-                <input type="number" className="person" placeholder="Child" />
-                <input type="number" className="person" placeholder="Adult" />
-              </div>
-              <h5 className="actionTitle">Which class do you want?</h5>
-              <div className="boxOfRadio">
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="actionRadio"
-                    id="economy"
-                    value="economy"
-                  />
-                  <label
-                    className="form-check-label textRadio"
-                    htmlFor="economy"
-                  >
-                    Economy
-                  </label>
-                </div>
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="actionRadio"
-                    id="bussiness"
-                    value="business"
-                  />
-                  <label
-                    className="form-check-label textRadio"
-                    htmlFor="bussiness"
-                  >
-                    Bussiness
-                  </label>
-                </div>
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="actionRadio"
-                    id="firstClass"
-                    value="firstclass"
-                  />
-                  <label
-                    className="form-check-label textRadio"
-                    htmlFor="firstClass"
-                  >
-                    First class
-                  </label>
-                </div>
-              </div>
-              <div>
-                <button className="btnSearch">
-                  SEARCH FLIGHT
-                  <img src={arrow} alt="" />
-                </button>
+            <h5 className="mediumText">Hey,</h5>
+            <h4 className="largeText smMarginTop">Where you want to go?</h4>
+            <div className="recently mMarginTop">
+              <h5 className="textRecently">Recently Searched</h5>
+              <img src={btnBack} alt="" className="btnNext" />
+            </div>
+            <div className="boxOfDestination">
+              <p className="textFrom">From</p>
+              <div className="row boxDetailDestination minMarginTop">
+                <input placeholder="starting" className="inputDestination" />
+                {/* <p className="textDestionation">Indonesia</p> */}
+                {/* <div className="boxOfIcon"> */}
+                <img src={iTransfer} alt="transfer" className="transfer" />
+                {/* </div> */}
+                <input placeholder="destination" className="inputDestination" />
+                {/* <p className="textDestionation">Japan</p> */}
               </div>
             </div>
+
+            <button className="btnSend">
+              <img src={logo} alt="logo" />
+              One way
+            </button>
+            <h5 className="actionTitle">How many person?</h5>
+            <div className="boxOfAdult">
+              <input type="number" className="person" placeholder="Child" />
+              <input type="number" className="person" placeholder="Adult" />
+            </div>
+            <h5 className="actionTitle">Which class do you want?</h5>
+            <div className="boxOfRadio">
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="actionRadio"
+                  id="economy"
+                  value="economy"
+                />
+                <label className="form-check-label textRadio" htmlFor="economy">
+                  Economy
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="actionRadio"
+                  id="bussiness"
+                  value="business"
+                />
+                <label
+                  className="form-check-label textRadio"
+                  htmlFor="bussiness"
+                >
+                  Bussiness
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="actionRadio"
+                  id="firstClass"
+                  value="firstclass"
+                />
+                <label
+                  className="form-check-label textRadio"
+                  htmlFor="firstClass"
+                >
+                  First class
+                </label>
+              </div>
+            </div>
+            <div>
+              <button className="btnSearch">
+                SEARCH FLIGHT
+                <img src={arrow} alt="" />
+              </button>
+            </div>
           </div>
-        </Slide>
+        </Fade>
         <div className="containerItems">
           <p className="textTrendings">TRENDING</p>
           <div className="tableTrendings">
@@ -176,7 +162,7 @@ export default function Landing() {
               <div className="col-sm-12 containerCard">
                 <div className="margin">
                   <Slide right>
-                    <CircleCard src={Tokyo} title="tokyo" />
+                    <CircleCard src={Tokyo} title="Tokyo" />
                   </Slide>
                 </div>
               </div>

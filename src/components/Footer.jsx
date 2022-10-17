@@ -1,15 +1,15 @@
 import React from "react";
-import "../assets/styles/footer.css";
+import "../assets/styles/auth.css";
 import appStore from "../assets/images/app store.png";
-import google from "../assets/images/google play.png";
-import facebook from "../assets/icons/vector-fb.svg";
-import twitter from "../assets/icons/vector-tt.svg";
-import instagram from "../assets/icons/vector-ig.svg";
-import youtube from "../assets/icons/vector-yt.svg";
+import google from "../assets/images/google play.png"
+import facebook from "../assets/icons/vector-fb.svg"
+import twitter from "../assets/icons/vector-tt.svg"
+import instagram from "../assets/icons/vector-ig.svg"
+import youtube from "../assets/icons/vector-yt.svg"
 
 const Footer = () => {
   return (
-    <div className="container">
+    <div className="auth container">
       <div className="jumbotron">
         <div className="form">
           <div className="form-title">
@@ -58,7 +58,7 @@ const Footer = () => {
           <div className="icon"></div>
           <div className="text">Jakarta Indonesia</div>
         </div>
-        <small>© Karaage Team. All Rights Reserved.</small>
+        <small>© Ankasa. All Rights Reserved.</small>
       </div>
     </div>
   );
