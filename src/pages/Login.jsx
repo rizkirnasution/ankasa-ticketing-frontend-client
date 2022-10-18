@@ -111,7 +111,7 @@ export default function Login() {
               type="button"
               className="button2"
               value="Register"
-              onClick={() => navigate("/register")}
+              onClick={() => navigate("/signup")}
             />
             <div className="line"></div>
             <div className="text">or sign in with</div>
