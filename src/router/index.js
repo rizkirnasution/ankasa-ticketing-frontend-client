@@ -1,10 +1,28 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Profile from "../pages/Profile";
 import MyBooking from "../pages/MyBooking";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Signup from "../pages/Signup";
+
+function PrivateRoute({ children }) {
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    return children;
+  }
+  return <Navigate to="/login" />;
+}
+
+function PublicRoute({ children }) {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    return children;
+  }
+  return <Navigate to="/" />;
+}
 
 export default function router() {
   return (
@@ -28,14 +46,16 @@ export default function router() {
           }
         />
 
-        <Route
-          path="/profile"
-          element={
-            // <PrivateRoute>
-            <Profile />
-            // </PrivateRoute>
-          }
-        />
+      <Route path="/profile">
+          <Route
+            index
+            element={
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            }
+          />
+           </Route>
         <Route
           path="/login"
           element={
