@@ -4,6 +4,7 @@ import Profile from "../pages/Profile";
 import MyBooking from "../pages/MyBooking";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
+import Signup from "../pages/Signup";
 
 export default function router() {
   return (
@@ -47,7 +48,7 @@ export default function router() {
           path="/signup"
           element={
             // <PublicRoute>
-            <Login />
+            <Signup />
             // </PublicRoute>
           }
         />
