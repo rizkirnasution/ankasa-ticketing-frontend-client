@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { Navbar, NavbarToggler, Collapse, Nav } from "reactstrap";
-import User from "../../src/assets/images/user.png"
+import User from "../../src/assets/images/profile.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetailUser } from "../redux/actions/user";
 import { useNavigate } from "react-router-dom";
@@ -29,7 +29,7 @@ function App() {
       ) : detailUser.isError === true ? (
         <h1>Error</h1>
       ) : !detailUser.data.photo ? (
-        "profile.jpg"
+        { User }
       ) : (
         detailUser.data.photo
       )
@@ -65,14 +65,56 @@ function App() {
               placeholder="Where you want to go?"
             />
           </div>
-          <div className="form-page col-2">
-            <Link className="navbar-brand" to="/search">
-              <div className="text">Find Ticket</div>
-            </Link>
-            {token && (
-              <Link className="navbar-brand" to="/mybooking">
-                <div className="text">My Booking</div>
+        </Link>
+        <NavbarToggler
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="row mr-auto" navbar>
+            <div className="form-search col-2">
+              <div className="icon"></div>
+              <input
+                type="text"
+                className="input"
+                placeholder="Where you want to go?"
+              />
+            </div>
+            <div className="form-page col-2">
+              <Link className="navbar-brand" to="/search">
+                <div className="text">Find Ticket</div>
               </Link>
+              {token && (
+                <Link className="navbar-brand" to="/mybooking">
+                  <div className="text">My Booking</div>
+                </Link>
+              )}
+            </div>
+          </Nav>
+          <div className="form-user">
+            {!token ? (
+              <Link to="/login" className="navbar-brand">
+                Login
+              </Link>
+            ) : detailUser.isLoading === true ? (
+              <h5>Loading</h5>
+            ) : detailUser.isError === true ? (
+              <h5>Error</h5>
+            ) : (
+              <>
+                <div className="icon-message"></div>
+                <div className="icon-notification"></div>
+                <Link to="/profile">
+                  <div>
+                    <img
+                      src={`${process.env.REACT_APP_API_URL}/${photo}`}
+                      className="profile"
+                      alt="profile"
+                    />
+                  </div>
+                </Link>
+              </>
             )}
           </div>
         </Nav>

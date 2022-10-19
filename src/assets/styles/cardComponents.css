@@ -47,12 +47,12 @@
   border-radius: 30px;
   max-width: 85px;
   justify-content: center;
+  max-height: 30px;
 }
 
 .mediumCard .pAirline {
   color: #fff;
   font-size: 14px;
-  margin-top: 2px;
 }
 
 .mediumCard .titleAirline {
@@ -60,7 +60,7 @@
   font-weight: 500;
   font-size: 15px;
   font-weight: 600;
-  margin-bottom: -1px;
+  margin-bottom: 1px;
   margin-right: 5px;
 }
 
@@ -77,7 +77,7 @@
 }
 
 .mediumCard .from {
-  margin-top: 100px;
+  margin-top: 80px;
   display: flex;
   justify-content: space-between;
   text-align: center;
