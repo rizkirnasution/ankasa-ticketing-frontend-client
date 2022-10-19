@@ -49,11 +49,7 @@
 
 .home .boxOfCard {
   position: absolute;
-<<<<<<< HEAD
   bottom: 5rem;
-=======
-  top: 8rem;
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
   right: 200px;
   width: 350px;
   height: 575px;
@@ -108,10 +104,7 @@
   color: rgba(151, 151, 151, 1);
   font-size: 15px;
   font-family: "Lato", sans-serif;
-<<<<<<< HEAD
   margin-bottom: 0.5rem;
-=======
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
 }
 
 .home .inputDestination {
@@ -340,10 +333,6 @@
   justify-content: space-between;
   width: 80%;
   max-width: 100%;
-<<<<<<< HEAD
-=======
-  overflow-y: scroll;
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
   margin-top: -20px;
 }
 
@@ -354,10 +343,7 @@
 
 .home .margin {
   margin: 0px 10px 0px 10px;
-<<<<<<< HEAD
   overflow: hidden;
-=======
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
 }
 
 .home .containerBtn {

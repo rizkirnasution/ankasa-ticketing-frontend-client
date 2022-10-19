@@ -47,19 +47,12 @@
   border-radius: 30px;
   max-width: 85px;
   justify-content: center;
-<<<<<<< HEAD
   max-height: 30px;
-=======
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
 }
 
 .mediumCard .pAirline {
   color: #fff;
   font-size: 14px;
-<<<<<<< HEAD
-=======
-  margin-top: 2px;
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
 }
 
 .mediumCard .titleAirline {
@@ -67,11 +60,7 @@
   font-weight: 500;
   font-size: 15px;
   font-weight: 600;
-<<<<<<< HEAD
   margin-bottom: 1px;
-=======
-  margin-bottom: -1px;
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
   margin-right: 5px;
 }
 
@@ -88,11 +77,7 @@
 }
 
 .mediumCard .from {
-<<<<<<< HEAD
   margin-top: 80px;
-=======
-  margin-top: 100px;
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
   display: flex;
   justify-content: space-between;
   text-align: center;

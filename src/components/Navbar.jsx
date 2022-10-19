@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
@@ -36,15 +35,6 @@ function App() {
       )
     );
   }, [detailUser.data.photo, detailUser.isError, detailUser.isLoading]);
-=======
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
-import { Navbar, NavbarToggler, Collapse, Nav } from "reactstrap";
-import User from "../../src/assets/images/user.png"
-
-function App() {
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
   return (
     <nav
       className="auth navbar navbar-light bg-light"
@@ -61,16 +51,11 @@ function App() {
           </div>
         </Link>
         <NavbarToggler
-<<<<<<< HEAD
           onClick={() => {
             setIsOpen(!isOpen);
           }}
         />
         <Collapse isOpen={isOpen} navbar>
-=======
-        />
-        <Collapse navbar>
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
           <Nav className="row mr-auto" navbar>
             <div className="form-search col-2">
               <div className="icon"></div>
@@ -84,7 +69,6 @@ function App() {
               <Link className="navbar-brand" to="/search">
                 <div className="text">Find Ticket</div>
               </Link>
-<<<<<<< HEAD
               {token && (
                 <Link className="navbar-brand" to="/mybooking">
                   <div className="text">My Booking</div>
@@ -102,43 +86,20 @@ function App() {
             ) : detailUser.isError === true ? (
               <h5>Error</h5>
             ) : (
-=======
-        
-                <Link className="navbar-brand" to="/mybooking">
-                  <div className="text">My Booking</div>
-                </Link>
-            
-            </div>
-          </Nav>
-          <div className="form-user">
-        
-              <Link to="/login" className="navbar-brand">
-                Login
-              </Link>
-           
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
               <>
                 <div className="icon-message"></div>
                 <div className="icon-notification"></div>
                 <Link to="/profile">
                   <div>
                     <img
-<<<<<<< HEAD
                       src={`${process.env.REACT_APP_API_URL}/${photo}`}
-=======
-                      src={User}
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
                       className="profile"
                       alt="profile"
                     />
                   </div>
                 </Link>
               </>
-<<<<<<< HEAD
             )}
-=======
-       
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
           </div>
         </Collapse>
       </Navbar>

@@ -2,10 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-<<<<<<< HEAD
-import "swiper/css/bundle";
-=======
->>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
