@@ -52,7 +52,9 @@ export const getDetailProduct = (id, navigate) => async (dispatch) => {
     const res = await axios.get(
       `${process.env.REACT_APP_API_URL}/product-detail/${id}`,
       {
-        headers: { token },
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
         withCredentials: true,
       }
     );

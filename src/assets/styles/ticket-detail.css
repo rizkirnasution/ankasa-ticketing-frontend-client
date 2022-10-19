@@ -1,0 +1,51 @@
+p {
+  margin: 0;
+}
+
+body {
+  background-color: #f5f6fa;
+}
+
+.header-ticket {
+  height: 1100px;
+}
+
+.header-ticket header {
+  background-color: #2395ff;
+  background-image: url(../images/a.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  padding-right: 30px;
+  padding-left: 30px;
+  max-height: 180px;
+}
+
+.input-hd {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+}
+
+@media (min-width: 768px) {
+  .header-ticket header {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}
+
+@media (min-width: 999px) {
+  .header-ticket {
+    height: 1250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-ticket header {
+    padding-right: 120px;
+    padding-left: 120px;
+  }
+}
