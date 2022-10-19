@@ -41,20 +41,20 @@ export default function router() {
         <Route path="/search" element={<SearchPage />} />
 
         <Route
+          path={"/ticket-detail/:id"}
+          element={
+            <PrivateRoute>
+              <TicketDetail />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
           path="/mybooking"
           element={
             // <PrivateRoute>
             <MyBooking />
             //  </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/ticket-detail/:id"
-          element={
-            <PrivateRoute>
-              <TicketDetail />
-            </PrivateRoute>
           }
         />
 
