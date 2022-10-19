@@ -1,6 +1,9 @@
 .circleCard {
   position: relative;
+<<<<<<< HEAD
   margin: 0px 10px 0px 10px;
+=======
+>>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
 }
 
 .circleCard .outline {

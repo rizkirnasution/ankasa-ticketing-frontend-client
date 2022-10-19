@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Background from "../components/Background";
@@ -14,10 +15,20 @@ export default function Login() {
     email: "",
     password: "",
   });
+=======
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Background from "../components/Background";
+import "../assets/styles/auth.css";
+
+export default function Login() {
+  const isLoading = false;
+>>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
   useEffect(() => {
     document.title = `${process.env.REACT_APP_APP_NAME} - Login`;
     window.scrollTo(0, 0);
   }, []);
+<<<<<<< HEAD
   const onSubmitted = (e) => {
     e.preventDefault();
     setErrors([]);
@@ -34,6 +45,8 @@ export default function Login() {
     });
     setIsLoading(false);
   };
+=======
+>>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
 
   return (
     <>
@@ -45,13 +58,18 @@ export default function Login() {
               <div className="icon"></div>
               <div className="text">Ankasa</div>
             </div>
+<<<<<<< HEAD
             <form onSubmit={(e) => onSubmitted(e)}>
+=======
+            <form>
+>>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
               <div className="form-input">
                 <h1>Login</h1>
                 <input
                   type="email"
                   className="input"
                   placeholder=" Enter email address"
+<<<<<<< HEAD
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                 />
                 <div className="form-password">
@@ -84,6 +102,19 @@ export default function Login() {
                   </ul>
                 </div>
               )}
+=======
+                />
+                <div className="form-password">
+                  <input className="input" placeholder=" Enter your password" />
+                  <button
+                    type="button"
+                    className="password"
+                    onClick={() => {}}
+                  ></button>
+                </div>
+              </div>
+
+>>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
               {isLoading ? (
                 <button
                   className="btn btn-success btn-lg ms-2"
@@ -107,12 +138,16 @@ export default function Login() {
             <Link to="/reset">Tap here for reset</Link>
             <div className="line"></div>
             <div className="text">Did you don't have account?</div>
+<<<<<<< HEAD
             <input
               type="button"
               className="button2"
               value="Register"
               onClick={() => navigate("/signup")}
             />
+=======
+            <input type="button" className="button2" value="Register" />
+>>>>>>> 41cc484d2c46d2ddf88c6662e8cdc5e74247d55a
             <div className="line"></div>
             <div className="text">or sign in with</div>
             <div className="form-login">
