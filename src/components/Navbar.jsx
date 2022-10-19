@@ -6,6 +6,7 @@ import User from "../../src/assets/images/user.png"
 import { useDispatch, useSelector } from "react-redux";
 import { getDetailUser } from "../redux/actions/user";
 import { useNavigate } from "react-router-dom";
+import PhotoDefault from '../assets/photo_default.jpg'
 
 function App() {
   const dispatch = useDispatch();
@@ -91,11 +92,34 @@ function App() {
               <div className="icon-notification"></div>
               <Link to="/profile">
                 <div>
-                  <img
-                    src={`${process.env.REACT_APP_API_URL}/${photo}`}
+                  {/* <img
+                    src={`https://drive.google.com/uc?export=view&id=${detailUser.data.photo}`}
                     className="profile"
                     alt="profile"
-                  />
+                  /> */}
+
+                      {
+                                                !detailUser.data.photo &&
+                                                (
+                                                    <>
+                                                        <img width={'200px'} height={'200px'} className="profile"
+                                                            src={`https://ui-avatars.com/api/${detailUser.data.name}?`}
+                                                            alt="Photo Profile" />
+                                                    </>
+                                                )
+                                            }
+                                            {
+                                                detailUser.data.photo &&
+                                                (
+                                                    <>
+                                                        <img width={'200px'} height={'200px'} className="profile"
+                                                            // src={`${process.env.REACT_APP_API_URL}/${detailUser.data.photo}`}
+                                                         src={`https://drive.google.com/uc?export=view&id=${detailUser.data.photo}`}
+                                                            // src={`https://ui-avatars.com/api/?name=Rizki+Nasution`}
+                                                            alt="Photo Profile" />
+                                                    </>
+                                                )
+                                            }
                 </div>
               </Link>
             </>

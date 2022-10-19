@@ -12,6 +12,7 @@ import iconMyReview from '../assets/icons/icon-myPriview.svg'
 import iconSetting from '../assets/icons/icon-setting.svg'
 import iconLogout from '../assets/icons/icon-logout.svg'
 import Swal from 'sweetalert2'
+import PhotoDefault from '../assets/photo_default.jpg'
 
 export default function Profile() {
 
@@ -116,8 +117,9 @@ export default function Profile() {
                                                 (
                                                     <>
                                                         <img width={'200px'} height={'200px'} className="card-img-top"
-                                                            src={`${process.env.REACT_APP_API_URL}/profile.jpg`}
-                                                            alt="Card image cap" />
+                                                            // src={PhotoDefault}
+                                                            src={`https://ui-avatars.com/api/${detailUser.data.name}?`}
+                                                            alt="Photo Profile" />
                                                     </>
                                                 )
                                             }
@@ -126,8 +128,10 @@ export default function Profile() {
                                                 (
                                                     <>
                                                         <img width={'200px'} height={'200px'} className="card-img-top"
-                                                            src={`${process.env.REACT_APP_API_URL}/${detailUser.data.photo}`}
-                                                            alt="Card image cap" />
+                                                            // src={`${process.env.REACT_APP_API_URL}/${detailUser.data.photo}`}
+                                                         src={`https://drive.google.com/uc?export=view&id=${detailUser.data.photo}`}
+                                                            // src={`https://ui-avatars.com/api/?name=Rizki+Nasution`}
+                                                            alt="Photo Profile" />
                                                     </>
                                                 )
                                             }
@@ -171,7 +175,7 @@ export default function Profile() {
                                     <div className="add-card">+ Add</div>
                                 </div>
                                 <div className="credit-card d-flex flex-column">
-                                    <label>4441 1235 5512 5551</label>
+                                    <label className="mt-3">4441 1235 5512 5551</label>
                                     <div className="detail-cc d-flex flex-row">
                                         <p className="type-card">X Card</p>
                                         <p className="balance">$ 1,440.2</p>

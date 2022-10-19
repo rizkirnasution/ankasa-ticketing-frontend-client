@@ -40,9 +40,9 @@ export default function router() {
         <Route
           path="/mybooking"
           element={
-            // <PrivateRoute>
-            <MyBooking />
-            //  </PrivateRoute>
+            <PrivateRoute>
+              <MyBooking />
+            </PrivateRoute>
           }
         />
 

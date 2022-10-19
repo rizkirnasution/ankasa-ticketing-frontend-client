@@ -1,50 +1,122 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../assets/styles/mybooking.css";
 import botArrow from "../assets/icons/bottom-arrow.svg";
 import airplane from "../assets/icons/airplane.svg";
-import {Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getDetailUser } from "../redux/actions/user";
+import { getMyBooking } from "../redux/actions/transaction";
+import { payTicket, deleteTicket } from "../redux/actions/transaction";
+import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Swal from "sweetalert2";
 import iconProfile from "../assets/icons/icon-profile.svg";
 import iconMyReview from "../assets/icons/icon-myPriview.svg";
 import iconSetting from "../assets/icons/icon-setting.svg";
 import iconLogout from "../assets/icons/icon-logout.svg";
+import PhotoDefault from '../assets/photo_default.jpg'
 
 
 export default function MyBooking() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const detailUser = useSelector((state) => {
+        return state.detailUser;
+    });
+
+    const myBooking = useSelector((state) => {
+        return state.myBooking;
+    });
+
+    useEffect(() => {
+        dispatch(getDetailUser(localStorage.getItem("id"), navigate));
+        dispatch(getMyBooking);
+    }, [dispatch, navigate]);
+
+    const processTicket = (id) => {
+        payTicket(id)
+            .then((result) => {
+                Swal.fire({
+                    title: "Success",
+                    text: "ticket has been pay",
+                    icon: "success",
+                });
+                dispatch(getMyBooking(navigate));
+            })
+            .catch((err) => {
+                alert(err);
+            });
+    };
+    const cancelTicket = (id) => {
+        Swal.fire({
+            title: "Are you sure to cancel this ticket?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                deleteTicket(id, localStorage.getItem("id"))
+                    .then((response) => {
+                        Swal.fire({
+                            title: "Ticket successfully canceled",
+                            icon: "success",
+                        });
+                        dispatch(getMyBooking(navigate));
+                    })
+                    .catch((err) => {
+                        Swal.fire({
+                            title: "Cancel ticket failed",
+                            icon: "error",
+                        });
+                    });
+            }
+        });
+    };
 
     const logout = () => {
         localStorage.clear();
-       
+        navigate("/login");
     };
     return (
         <>
             <div className="container-fluid myBooking ml-0 mr-0">
                 <Navbar />
                 <section className="d-flex w-100">
-                    <div className="col-lg-4 col-12 side-content">
+                <div className="col-lg-4 col-12 side-content">
                         <div className="card d-flex flex-column w-100">
-                          
+                            {detailUser.isLoading ? (
+                                <div>Loading</div>
+                            ) : (
                                 <div className="d-flex flex-column">
-                               
-                                
+                                    {!detailUser.data.photo && (
                                         <>
                                             <img
                                                 width={"200px"}
                                                 height={"200px"}
                                                 className="card-img-top"
-                                         
-                                                 src={`https://ui-avatars.com/api/?name=Rizki+Nasution`}
+                                                src={`https://ui-avatars.com/api/${detailUser.data.name}?`}
                                                 alt="Card cap"
                                             />
                                         </>
-                              
+                                    )}
+                                    {detailUser.data.photo && (
+                                        <>
+                                            <img
+                                                width={"200px"}
+                                                height={"200px"}
+                                                className="card-img-top"
+                                                src={`https://drive.google.com/uc?export=view&id=${detailUser.data.photo}`}
+                                                alt="Card cap"
+                                            />
+                                        </>
+                                    )}
                                     <div className="detail-profile">
-                                        {<h4>Rizki Romadhona Nasution</h4>}
-                                        {<p>Kota Bogor</p>}
+                                        {<h4>{detailUser.data.name}</h4>}
+                                        {<p>{detailUser.data.address}</p>}
                                     </div>
                                 </div>
-                   
+                            )}
 
                             <div className="label d-flex">
                                 <div className="label-card">Cards</div>
@@ -58,13 +130,10 @@ export default function MyBooking() {
                                 </div>
                             </div>
                             <div className="card-setting d-flex flex-column justify-content-start">
-                                <Link to="/profile">
-                                    <div className="">
-                                        <img src={iconProfile} alt="" />
-                                        <label htmlFor="">Profile</label>
-                                    </div>
-                                </Link>
-                            
+                                <div className="">
+                                    <img src={iconProfile} alt="" />
+                                    <label htmlFor="">Profile</label>
+                                </div>
                                 <div>
                                     <img src={iconMyReview} alt="" />
                                     <label htmlFor="">My Review</label>
@@ -90,30 +159,55 @@ export default function MyBooking() {
                                 <label className="order-history">Order History</label>
                             </div>
                         </div>
-                  
-                           
-                                    <div className="card">
+                        {myBooking.isLoading ? (
+                            <div>Loading</div>
+                        ) : (
+                            myBooking.data.map((item, index) => {
+                                return (
+                                    <div key={index} className="card">
                                         <div className="content d-flex flex-column">
-                                            <p className="date-departure">11-10-2022</p>
+                                            <p className="date-departure">{item.flight_date}</p>
                                             <div className="destination d-flex flex-row">
-                                                <h5>CGK</h5>
+                                                <h5>{item.origin}</h5>
                                                 <img src={airplane} alt="" />
-                                                <h5>KNO</h5>
+                                                <h5>{item.destination}</h5>
                                             </div>
                                             <p className="code-airplane">
-                                                Rizki RN 22D
+                                                {item.name} {item.seat}
                                             </p>
                                         </div>
                                         <div className="status">
                                             <label className="label-status">Status</label>
-                             
+                                            {item.is_paid && (
                                                 <>
                                                     <button className="ticket-iussue">
                                                         Eticket issued
                                                     </button>
                                                 </>
-          
-                                            <Link to={`/detail`}>
+                                            )}
+
+                                            {!item.is_paid && (
+                                                <>
+                                                    <div className="boxButton">
+                                                        <button className="waiting-ticket">
+                                                            Waiting for payment
+                                                        </button>
+                                                        <button
+                                                            onClick={() => cancelTicket(item.id)}
+                                                            className="cancel-ticket"
+                                                        >
+                                                            Cancel Ticket
+                                                        </button>
+                                                        <button
+                                                            onClick={() => processTicket(item.id)}
+                                                            className="pay-ticket"
+                                                        >
+                                                            Pay Ticket
+                                                        </button>
+                                                    </div>
+                                                </>
+                                            )}
+                                            <Link to={`/detail/${item.id}`}>
                                             <div className="label-viewDetail">
                                                 <label>View Details</label>
                                                 <img src={botArrow} alt="" />
@@ -122,7 +216,9 @@ export default function MyBooking() {
 
                                         </div>
                                     </div>
-                      
+                                );
+                            })
+                        )}
                     </div>
                 </section>
                 <Footer />
