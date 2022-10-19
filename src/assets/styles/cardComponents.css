@@ -1,0 +1,111 @@
+.mediumCard {
+  position: relative;
+  width: 200px;
+  height: 250px;
+}
+
+.mediumCard .cardImage {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.mediumCard .objectGradient {
+  position: absolute;
+  top: 0;
+  padding: 20px 25px;
+  width: 200px;
+  height: 250px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  border-radius: 15px;
+}
+
+.mediumCard .textAirlines {
+  margin-top: 20px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.41);
+  height: 25px;
+  width: 88px;
+  border-radius: 18px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.mediumCard .boxAirlines {
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.41);
+  border-radius: 30px;
+  max-width: 85px;
+  justify-content: center;
+  max-height: 30px;
+}
+
+.mediumCard .pAirline {
+  color: #fff;
+  font-size: 14px;
+}
+
+.mediumCard .titleAirline {
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 1px;
+  margin-right: 5px;
+}
+
+.mediumCard .textDestination {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mediumCard .titleCountry {
+  color: #fff;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.mediumCard .from {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.mediumCard .from p {
+  color: #fff;
+  font-size: 12px;
+}
+
+.mediumCard .circle {
+  height: 22px;
+  width: 22px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.17);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mediumCard .iPrevious {
+  width: 10px;
+  height: 10px;
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 576px) {
+  .mediumCard {
+    margin-right: 20px;
+  }
+}
