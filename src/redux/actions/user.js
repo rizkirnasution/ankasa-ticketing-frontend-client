@@ -40,6 +40,7 @@ export const getDetailUser = (id, navigate) => async (dispatch) => {
   }
 };
 
+<<<<<<< HEAD
 export const updateUser = async (body, setErrors) => {
   try {
     const token = localStorage.getItem("token");
@@ -53,6 +54,22 @@ export const updateUser = async (body, setErrors) => {
     });
 
     return true;
+=======
+
+export const updateUser = async (body, setErrors) => {
+  try {
+    const token = localStorage.getItem("token")
+    const id = localStorage.getItem("id")
+
+    await axios.put(`${process.env.REACT_APP_API_URL}/user/${id}`, body, {
+      headers: {
+        token: token
+      }
+    })
+
+    return true;
+
+>>>>>>> 3d0137d5b839cc3c4199acf8a1a30d68683f4385
   } catch (error) {
     if (error.response) {
       if (Array.isArray(error.response.data.error)) {
@@ -70,18 +87,31 @@ export const updateUser = async (body, setErrors) => {
 
 export const updatePhoto = async (body, setErrors) => {
   try {
+<<<<<<< HEAD
     const token = localStorage.getItem("token");
     const id = localStorage.getItem("id");
+=======
+    const token = localStorage.getItem("token")
+    const id = localStorage.getItem("id")
+>>>>>>> 3d0137d5b839cc3c4199acf8a1a30d68683f4385
 
     await axios.put(`${process.env.REACT_APP_API_URL}/user/${id}/photo`, body, {
       headers: {
         token: token,
+<<<<<<< HEAD
         "Content-Type": "multipart/form-data",
       },
       withCredentials: true,
     });
 
     return true;
+=======
+        "Content-Type": "multipart/form-data"
+      }
+    })
+
+    return true
+>>>>>>> 3d0137d5b839cc3c4199acf8a1a30d68683f4385
   } catch (error) {
     if (error.response) {
       if (Array.isArray(error.response.data.error)) {

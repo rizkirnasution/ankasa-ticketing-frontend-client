@@ -37,17 +37,33 @@ function App() {
   }, [detailUser.data.photo, detailUser.isError, detailUser.isLoading]);
   return (
     <nav
-      className="auth navbar navbar-light bg-light"
-      style={{
-        display: "block",
-        width: "100%",
-      }}
-    >
-      <Navbar color="light" light expand="md">
-        <Link to="/" className="navbar-brand">
-          <div className="form-title">
+    className="auth navbar navbar-light bg-light"
+    style={{
+      display: "block",
+      width: "100%",
+    }}
+  >
+    <Navbar color="light" light expand="md">
+      <Link to="/" className="navbar-brand">
+        <div className="form-title">
+          <div className="icon"></div>
+          <div className="text">Ankasa</div>
+        </div>
+      </Link>
+      <NavbarToggler
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
+      />
+      <Collapse isOpen={isOpen} navbar>
+        <Nav className="row mr-auto" navbar>
+          <div className="form-search col-2">
             <div className="icon"></div>
-            <div className="text">Ankasa</div>
+            <input
+              type="text"
+              className="input"
+              placeholder="Where you want to go?"
+            />
           </div>
         </Link>
         <NavbarToggler
@@ -101,9 +117,35 @@ function App() {
               </>
             )}
           </div>
-        </Collapse>
-      </Navbar>
-    </nav>
+        </Nav>
+        <div className="form-user">
+          {!token ? (
+            <Link to="/login" className="navbar-brand">
+              Login
+            </Link>
+          ) : detailUser.isLoading === true ? (
+            <h5>Loading</h5>
+          ) : detailUser.isError === true ? (
+            <h5>Error</h5>
+          ) : (
+            <>
+              <div className="icon-message"></div>
+              <div className="icon-notification"></div>
+              <Link to="/profile">
+                <div>
+                  <img
+                    src={`${process.env.REACT_APP_API_URL}/${photo}`}
+                    className="profile"
+                    alt="profile"
+                  />
+                </div>
+              </Link>
+            </>
+          )}
+        </div>
+      </Collapse>
+    </Navbar>
+  </nav>
   );
 }
 
