@@ -17,7 +17,7 @@ export const getDestination = () => async (dispatch) => {
 
     const res = await axios.get(
       `${process.env.REACT_APP_API_URL}/destination`,
-      { withCredentials: true }
+      // { withCredentials: true }
     );
 
     dispatch({
@@ -41,7 +41,7 @@ export const getOldDestination = () => async (dispatch) => {
 
     const res = await axios.get(
       `${process.env.REACT_APP_API_URL}/destination?sortType=ASC&limit=10`,
-      { withCredentials: true }
+      // { withCredentials: true }
     );
 
     dispatch({

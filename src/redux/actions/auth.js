@@ -28,7 +28,7 @@ export const login = async (data, setErrors) => {
 export const register = async (data, setErrors) => {
   try {
     await axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, data, {
-      withCredentials: true,
+      // withCredentials: true,
     });
     return true;
   } catch (error) {
@@ -49,7 +49,7 @@ export const register = async (data, setErrors) => {
 export const forgot = async (data, setErrors) => {
   try {
     await axios.put(`${process.env.REACT_APP_API_URL}/auth/forgot`, data, {
-      withCredentials: true,
+      // withCredentials: true,
     });
     return true;
   } catch (error) {
@@ -72,7 +72,7 @@ export const reset = async (token, data, setErrors) => {
     await axios.put(
       `${process.env.REACT_APP_API_URL}/auth/reset/${token}`,
       data,
-      { withCredentials: true }
+      // { withCredentials: true }
     );
     return true;
   } catch (error) {

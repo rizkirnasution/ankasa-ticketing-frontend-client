@@ -7,6 +7,7 @@ import Home from "../pages/Home";
 import Signup from "../pages/Signup";
 import SearchPage from "../pages/SearchPage";
 import TicketDetail from "../pages/TicketDetail";
+import BookingDetail from "../pages/BookingDetail";
 
 function PrivateRoute({ children }) {
   const token = localStorage.getItem("token");
@@ -39,6 +40,14 @@ export default function router() {
           }
         />
         <Route path="/search" element={<SearchPage />} />
+        <Route
+          path="/detail"
+          element={
+            <PrivateRoute>
+              <BookingDetail />
+            </PrivateRoute>
+          }
+        />
 
         <Route
           path={"/ticket-detail/:id"}
@@ -52,9 +61,9 @@ export default function router() {
         <Route
           path="/mybooking"
           element={
-            // <PrivateRoute>
-            <MyBooking />
-            //  </PrivateRoute>
+            <PrivateRoute>
+              <MyBooking />
+            </PrivateRoute>
           }
         />
 

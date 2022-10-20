@@ -21,7 +21,7 @@ export const getListProduct = (url) => async (dispatch) => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-      withCredentials: true,
+      // withCredentials: true,
     });
 
     dispatch({
@@ -55,7 +55,7 @@ export const getDetailProduct = (id, navigate) => async (dispatch) => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        withCredentials: true,
+        // withCredentials: true,
       }
     );
 
@@ -89,8 +89,10 @@ export const postTransactions = async (id, data, setErrors) => {
       `${process.env.REACT_APP_API_URL}/transactions/${id}`,
       data,
       {
-        headers: { token },
-        withCredentials: true,
+        headers: { 
+          Authorization : `Bearer ${token}`
+       },
+        // withCredentials: true,
       }
     );
 
