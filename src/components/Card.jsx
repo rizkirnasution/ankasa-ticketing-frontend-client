@@ -5,7 +5,12 @@ import previous from "../assets/icons/previous.svg";
 export default function Card(params) {
   return (
     <div className="mediumCard">
-      <img src={params.src} alt={params.alt} className="cardImage" />
+      <img
+        crossorigin="anonymous"
+        src={params.src}
+        alt={params.alt}
+        className="cardImage"
+      />
       <div className="objectGradient">
         <p className="textDestination">{params.destination},</p>
         <h5 className="titleCountry">{params.country}</h5>

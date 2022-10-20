@@ -20,9 +20,13 @@ export const getMyBooking = (navigate) => async (dispatch) => {
         const res = await axios.get(
             `${process.env.REACT_APP_API_URL}/userTransactions`,
             {
-                headers: { token },
+                headers: { 
+                    Authorization : `Bearer ${token}`
+                 },
+                // withCredentials: true,
             }
         );
+        console.log(res.data)
 
         dispatch({
             type: GET_MYBOOKING_SUCCESS,
@@ -57,7 +61,10 @@ export const getBookingDetails = (id, navigate) => async (dispatch) => {
     const res = await axios.get(
       `${process.env.REACT_APP_API_URL}/detailTransactions/${id}`,
       {
-        headers: { token },
+        headers: { 
+            Authorization : `Bearer ${token}`
+         },
+        // withCredentials: true,
       }
     );
 
@@ -89,7 +96,8 @@ export const payTicket = (id) => {
         axios.put(`${process.env.REACT_APP_API_URL}/transactions/${id}/paid`, {}, {
             headers: {
                 token: token
-            }
+            },
+            withCredentials: true
         })
             .then((response) => {
                 resolve(response.data)
@@ -106,8 +114,10 @@ export const deleteTicket = (id) => {
     return new Promise((resolve, reject) => {
         axios.delete(`${process.env.REACT_APP_API_URL}/transactions/${id}`, {
             headers: {
-                token: token
-            }
+                token: token,
+                
+            },
+            // withCredentials: true
         })
             .then((response) => {
                 resolve(response.data)

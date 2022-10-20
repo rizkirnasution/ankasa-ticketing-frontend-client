@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../assets/styles/mybooking.css";
 import botArrow from "../assets/icons/bottom-arrow.svg";
 import airplane from "../assets/icons/airplane.svg";
@@ -28,10 +28,11 @@ export default function MyBooking() {
     const myBooking = useSelector((state) => {
         return state.myBooking;
     });
+    console.log(myBooking)
 
     useEffect(() => {
         dispatch(getDetailUser(localStorage.getItem("id"), navigate));
-        dispatch(getMyBooking);
+        dispatch(getMyBooking(localStorage.getItem("id"), navigate));
     }, [dispatch, navigate]);
 
     const processTicket = (id) => {
@@ -159,55 +160,28 @@ export default function MyBooking() {
                                 <label className="order-history">Order History</label>
                             </div>
                         </div>
-                        {myBooking.isLoading ? (
-                            <div>Loading</div>
-                        ) : (
-                            myBooking.data.map((item, index) => {
-                                return (
-                                    <div key={index} className="card">
+                        <div className="card">
                                         <div className="content d-flex flex-column">
-                                            <p className="date-departure">{item.flight_date}</p>
+                                            <p className="date-departure">11-10-2022</p>
                                             <div className="destination d-flex flex-row">
-                                                <h5>{item.origin}</h5>
+                                                <h5>CGK</h5>
                                                 <img src={airplane} alt="" />
-                                                <h5>{item.destination}</h5>
+                                                <h5>KNO</h5>
                                             </div>
                                             <p className="code-airplane">
-                                                {item.name} {item.seat}
+                                                Rizki RN 22D
                                             </p>
                                         </div>
                                         <div className="status">
                                             <label className="label-status">Status</label>
-                                            {item.is_paid && (
+                             
                                                 <>
                                                     <button className="ticket-iussue">
                                                         Eticket issued
                                                     </button>
                                                 </>
-                                            )}
-
-                                            {!item.is_paid && (
-                                                <>
-                                                    <div className="boxButton">
-                                                        <button className="waiting-ticket">
-                                                            Waiting for payment
-                                                        </button>
-                                                        <button
-                                                            onClick={() => cancelTicket(item.id)}
-                                                            className="cancel-ticket"
-                                                        >
-                                                            Cancel Ticket
-                                                        </button>
-                                                        <button
-                                                            onClick={() => processTicket(item.id)}
-                                                            className="pay-ticket"
-                                                        >
-                                                            Pay Ticket
-                                                        </button>
-                                                    </div>
-                                                </>
-                                            )}
-                                            <Link to={`/detail/${item.id}`}>
+          
+                                            <Link to={`/detail`}>
                                             <div className="label-viewDetail">
                                                 <label>View Details</label>
                                                 <img src={botArrow} alt="" />
@@ -216,9 +190,6 @@ export default function MyBooking() {
 
                                         </div>
                                     </div>
-                                );
-                            })
-                        )}
                     </div>
                 </section>
                 <Footer />

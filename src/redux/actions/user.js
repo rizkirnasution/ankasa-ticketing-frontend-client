@@ -14,12 +14,10 @@ export const getDetailUser = (id, navigate) => async (dispatch) => {
       payload: null,
     });
 
-    const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}/user/${id}`,
-      {
-        headers: { token },
-      }
-    );
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/user/${id}`, {
+      headers: { token },
+      // withCredentials: true,
+    });
 
     dispatch({
       type: GET_DETAIL_USER_SUCCESS,
@@ -42,20 +40,19 @@ export const getDetailUser = (id, navigate) => async (dispatch) => {
   }
 };
 
-
 export const updateUser = async (body, setErrors) => {
   try {
-    const token = localStorage.getItem("token")
-    const id = localStorage.getItem("id")
+    const token = localStorage.getItem("token");
+    const id = localStorage.getItem("id");
 
     await axios.put(`${process.env.REACT_APP_API_URL}/user/${id}`, body, {
       headers: {
-        token: token
-      }
-    })
+        token: token,
+      },
+      // withCredentials: true,
+    });
 
     return true;
-
   } catch (error) {
     if (error.response) {
       if (Array.isArray(error.response.data.error)) {
@@ -73,17 +70,18 @@ export const updateUser = async (body, setErrors) => {
 
 export const updatePhoto = async (body, setErrors) => {
   try {
-    const token = localStorage.getItem("token")
-    const id = localStorage.getItem("id")
+    const token = localStorage.getItem("token");
+    const id = localStorage.getItem("id");
 
     await axios.put(`${process.env.REACT_APP_API_URL}/user/${id}/photo`, body, {
       headers: {
         token: token,
-        "Content-Type": "multipart/form-data"
-      }
-    })
+        "Content-Type": "multipart/form-data",
+      },
+      // withCredentials: true,
+    });
 
-    return true
+    return true;
   } catch (error) {
     if (error.response) {
       if (Array.isArray(error.response.data.error)) {

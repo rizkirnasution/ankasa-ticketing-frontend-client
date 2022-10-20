@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
+.booking {
+  font-family: 'Poppins';
+}
+
+.form-data {
+  color: #A5A5A5;
+}
+
+.form-data, .ticket-data {
+  font-family: 'Lato';
+  font-size: 18px;
+}
+
+.threedots:after {
+  content: "\2807";
+  font-size: 30px;
+  color: #2395FF;
+}

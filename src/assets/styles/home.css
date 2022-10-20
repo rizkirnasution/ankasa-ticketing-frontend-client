@@ -49,7 +49,7 @@
 
 .home .boxOfCard {
   position: absolute;
-  top: 8rem;
+  bottom: 5rem;
   right: 200px;
   width: 350px;
   height: 575px;
@@ -104,6 +104,7 @@
   color: rgba(151, 151, 151, 1);
   font-size: 15px;
   font-family: "Lato", sans-serif;
+  margin-bottom: 0.5rem;
 }
 
 .home .inputDestination {
@@ -332,7 +333,6 @@
   justify-content: space-between;
   width: 80%;
   max-width: 100%;
-  overflow-y: scroll;
   margin-top: -20px;
 }
 
@@ -343,6 +343,7 @@
 
 .home .margin {
   margin: 0px 10px 0px 10px;
+  overflow: hidden;
 }
 
 .home .containerBtn {
