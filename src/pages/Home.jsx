@@ -228,11 +228,11 @@ export default function Landing() {
           </div>
         </div>
       </div>
-      <Chatbot
+      {/* <Chatbot
         config={config}
         messageParser={MessageParser}
         actionProvider={ActionProvider}
-      />
+      /> */}
       <Footer />
     </>
   );
