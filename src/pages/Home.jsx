@@ -17,6 +17,12 @@ import Footer from "../components/Footer";
 import Banner from "../components/Banner";
 import BannerCircle from "../components/BannerCircle";
 
+import Chatbot from "react-chatbot-kit";
+import "react-chatbot-kit/build/main.css";
+import config from "../components/Chatbot/config.js";
+import MessageParser from "../components/Chatbot/MessageParser.jsx";
+import ActionProvider from "../components/Chatbot/ActionProvider.jsx";
+
 import {
   getDestination,
   getOldDestination,
@@ -222,6 +228,11 @@ export default function Landing() {
           </div>
         </div>
       </div>
+      <Chatbot
+        config={config}
+        messageParser={MessageParser}
+        actionProvider={ActionProvider}
+      />
       <Footer />
     </>
   );

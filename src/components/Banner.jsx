@@ -17,18 +17,31 @@ export default function Banner() {
     document.title = `${process.env.REACT_APP_APP_NAME} | Explore`;
     window.scrollTo(0, 0);
   }, [dispatch]);
+
+  const options = {
+    loop: true,
+    nav: false,
+    margin: 30,
+    autoWidth: true,
+    items: 5,
+    autoplayTimeout: 10000,
+    autoplay: true,
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 2,
+      },
+      480: {
+        items: 3,
+      },
+      769: {
+        items: 6,
+      },
+    },
+  };
   return (
     <div className="container-banner mt-5">
-      <OwlCarousel
-        className="owl-theme"
-        loop
-        nav={false}
-        margin={30}
-        autoWidth={false}
-        items={5}
-        autoplayTimeout={10000}
-        autoplay={true}
-      >
+      <OwlCarousel className="owl-theme" {...options}>
         {destination.data.map((item, index) => (
           <div class="item mt-5">
             <div key={index}>
