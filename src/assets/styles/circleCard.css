@@ -45,5 +45,6 @@
   .circleCard .titleDestination {
     margin-top: 12px;
     font-size: 12px;
+    padding-right: 100px;
   }
 }

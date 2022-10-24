@@ -380,8 +380,14 @@
 }
 
 @media screen and (max-width: 576px) {
+  body {
+    overflow-x: hidden;
+  }
+  .item {
+    width: 200px;
+  }
   .home .object {
-    margin-left: -50px !important;
+    margin-right: -96px !important;
     width: 50px;
     height: 50px;
   }
@@ -395,8 +401,8 @@
   }
   .home .boxOfCard {
     position: absolute;
-    top: 250px;
-    right: 100px;
+    top: -200px;
+    right: 8px;
     width: 350px;
     height: 575px;
     background-color: #ffffff;
@@ -406,7 +412,7 @@
   }
   .home .titleBox {
     padding: 0px 0px 0px 0px;
-    margin: -20px 0px 0px 15px;
+    margin: 0px 0px 0px 15px;
   }
   .home .bgImg {
     width: 250px;
@@ -419,7 +425,7 @@
   .home .boxOfMediumImg {
     position: absolute;
     right: 0px;
-    top: 120px;
+    top: 150px;
     display: flex;
     flex-direction: column;
   }
@@ -429,12 +435,13 @@
     height: 150px;
     object-fit: cover;
     border-top-left-radius: 50px;
+    margin-left: 55px;
   }
 
   .home .object {
-    margin-top: 450px;
-    width: 100px;
-    height: 100px;
+    margin-top: 350px;
+    width: 200px;
+    height: 200px;
   }
 
   .home .containerItems {
