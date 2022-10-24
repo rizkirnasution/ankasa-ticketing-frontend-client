@@ -68,7 +68,7 @@ export default function TicketDetail() {
       Swal.fire({
         icon: "error",
         title: "Failed",
-        text: "There must be an adult passenger",
+        text: "Please complete your passenger data first!",
       });
     }
   };

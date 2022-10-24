@@ -5,7 +5,7 @@ export default function CircleCard(params) {
   return (
     <div className="circleCard">
       <div className="outline">
-        <img src={params.src} alt="" className="img" />
+        <img src={params.src} alt="" className="img" crossorigin="anonymous" />
       </div>
       <h4 className="titleDestination">{params.title}</h4>
     </div>

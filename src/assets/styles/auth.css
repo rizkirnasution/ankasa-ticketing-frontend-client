@@ -350,7 +350,7 @@ body {
     margin-left: 73px;
   }
   .auth .jumbotron .form .form-title {
-    width: 169px;
+    width: 240px;
   }
   .auth .bottom small {
     margin-right: 517px;
@@ -377,6 +377,7 @@ body {
   }
   .auth .jumbotron .form .images {
     flex-direction: row;
+    margin-left: -10px;
   }
   .auth .jumbotron .form .images img {
     width: 180px;
@@ -385,9 +386,11 @@ body {
   }
   .auth .jumbotron .form ul {
     display: flex;
+    flex-direction: column;
   }
   .auth .jumbotron .form ul li {
     margin: 0px 10px 0px 10px;
+    padding-top: 2px;
   }
   .auth .jumbotron .form .form-icon img {
     margin-bottom: 20px;
@@ -410,8 +413,15 @@ body {
   }
   .auth .form-user {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    margin-left: 0px;
+    margin-left: 95px;
+  }
+  .auth .form-user .profile {
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    border: 2px solid #2395ff;
+    border-radius: 30px;
   }
 }
