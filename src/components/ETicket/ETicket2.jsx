@@ -12,23 +12,30 @@ import vector from '../../assets/images/Vector1.svg';
 import barcode from '../../assets/images/Group923.svg';
 
 const ETicket = () => {
-    // const dispatch = useDispatch();
-    // const navigate = useNavigate();
-    // const urlParams = useParams();
-    // const { detailBooking } = useSelector(
-    //   (state) => state
-    // );
 
-    // useEffect(() => {
-    //   document.title = `${process.env.REACT_APP_APP_NAME} - Booking Detail`;
-    //   window.scrollTo(0, 0);
-    // }, []);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const urlParams = useParams();
   
-    // useEffect(() => {
-    //   dispatch(getBookingDetails(urlParams.id, navigate));
-    //   dispatch(getDetailUser(localStorage.getItem("id"), navigate));
-    // }, [dispatch, navigate, urlParams.id]);
+  const detailUser = useSelector((state) => {
+    return state.detailUser
+})
+  const { detailBooking } = useSelector(
+    (state) => state
+  );
 
+    useEffect(() => {
+      document.title = `${process.env.REACT_APP_APP_NAME} - Booking Detail`;
+      window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
+      dispatch(getBookingDetails(urlParams.id, navigate));
+      
+      dispatch(getDetailUser(localStorage.getItem("id"), navigate));
+    }, [dispatch, navigate, urlParams.id]);
+    console.log("ini apa "+ urlParams.id);
+    console.log("detail booking nih "+detailBooking.data.data)
     return (
       <div>
         <Card body style={style.card}>
@@ -48,31 +55,31 @@ const ETicket = () => {
             <Col xs="2" className="border">
               <Row className="py-2">
                 <Col className="text-center">
-                  {/* {
-                      !detailBooking.data.photo && ( */}
-                      {/* <>
+                {/* {
+                      !detailBooking.data.photo && (
+                      <>
                         <img src={`${process.env.REACT_APP_API_URL}/ticket.jpg`} alt='airline'
                          width='186' height='100'/>
-                      </> */}
-                     {/* )
+                      </>
+                     )
 
                     
-                  } */}
-                  {/* {
-                     detailBooking.data.photo && ( */}
-                      {/* <>
+                  }
+                  {
+                     detailBooking.data.photo && (
+                      <>
                         <img src={`${process.env.REACT_APP_API_URL}/${detailBooking.data.photo}`} alt='airline'
                         width='186' height='100'/>
-                      </> */}
+                      </>
                        
-                    {/* )
+                    )
                   } */}
                  
                 </Col>
               </Row>
               <Row className="py-2">
                 <Col tag="h3" className="text-center" style={style.origin}>
-                  <b>CGK</b>
+                <b>ORIGIN</b>
                 </Col>
               </Row>
               <Row className="py-2">
@@ -82,7 +89,7 @@ const ETicket = () => {
               </Row>
               <Row className="py-2">
                 <Col tag="h3" className="text-center" style={style.origin}>
-                  <b>SBY</b>
+                <b>DESTINATION</b>
                 </Col>
               </Row>
             </Col>
@@ -102,10 +109,10 @@ const ETicket = () => {
                     </Row>
                     <Row className="text-start">
                       <Col className="ticket-data" xs="6">
-                        RIZKI NASUTION
+                      {detailBooking.passenger_name}
                       </Col>
                       <Col className="ticket-data" xs="6">
-                        ECONOMY
+                      TYPE
                       </Col>
                     </Row>
                   </div>
@@ -120,10 +127,10 @@ const ETicket = () => {
                     </Row>
                     <Row className="text-start">
                       <Col className="ticket-data" xs="6">
-                        2022-10-21
+                      {/* {moment(detailBooking.data.flight_date).format("ll")} */}
                       </Col>
                       <Col className="ticket-data" xs="6">
-                        2022-10-20
+                      {/* {moment(detailBooking.data.flight_date).format("LT")} */}
                       </Col>
                     </Row>
                   </div>
@@ -138,10 +145,10 @@ const ETicket = () => {
                     </Row>
                     <Row className="text-start">
                       <Col className="ticket-data" xs="6">
-                      86E4769065
+                      {/* {detailBooking.data.code} */}
                       </Col>
                       <Col className="ticket-data" xs="6">
-                       3A
+                      {/* {detailBooking.data.terminal} */}
                       </Col>
                     </Row>
                   </div>
@@ -156,7 +163,7 @@ const ETicket = () => {
                     </Row>
                     <Row className="text-start">
                       <Col className="ticket-data" xs="6">
-                        4
+                      {/* {detailBooking.data.gate} */}
                       </Col>
                       <Col className="ticket-data" xs="6">
                         21 B
@@ -173,7 +180,9 @@ const ETicket = () => {
                   md="2"
                   style={style.barcode1}
                 >
-                  <img src={barcode} alt='barcode'/>
+                  {/* <img src={barcode} alt='barcode'/> */}
+
+                   <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=rizki nasution <br> AD4F9F5F12 `} alt='barcode'/>
                 </Col>
               </Row>
             </Col>

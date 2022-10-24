@@ -8,7 +8,7 @@ import {
     GET_DETAIL_BOOKING_FAILED
 } from "./types";
 
-export const getMyBooking = (navigate) => async (dispatch) => {
+export const getMyBooking = (userId, navigate) => async (dispatch) => {
     try {
         const token = localStorage.getItem("token");
 
@@ -18,7 +18,7 @@ export const getMyBooking = (navigate) => async (dispatch) => {
         });
 
         const res = await axios.get(
-            `${process.env.REACT_APP_API_URL}/userTransactions`,
+            `${process.env.REACT_APP_API_URL}/userTransactions/${userId}`,
             {
                 headers: { 
                     Authorization : `Bearer ${token}`
@@ -26,7 +26,7 @@ export const getMyBooking = (navigate) => async (dispatch) => {
                 // withCredentials: true,
             }
         );
-        console.log(res.data)
+        console.log("nana "+ res.data.data)
 
         dispatch({
             type: GET_MYBOOKING_SUCCESS,
@@ -97,7 +97,7 @@ export const payTicket = (id) => {
             headers: {
                 token: token
             },
-            withCredentials: true
+            // withCredentials: true
         })
             .then((response) => {
                 resolve(response.data)

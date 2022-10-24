@@ -41,7 +41,7 @@ export default function router() {
         />
         <Route path="/search" element={<SearchPage />} />
         <Route
-          path="/detail"
+          path="/detail/:id"
           element={
             <PrivateRoute>
               <BookingDetail />
@@ -71,9 +71,9 @@ export default function router() {
           <Route
             index
             element={
-              // <PrivateRoute>
+              <PrivateRoute>
               <Profile />
-              // </PrivateRoute>
+               </PrivateRoute>
             }
           />
         </Route>
