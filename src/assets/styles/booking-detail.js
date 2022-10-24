@@ -1,7 +1,10 @@
 const style = {
     card: {
-      background: '#FFFFFF',
-      margin: '100px 150px'
+      background: '#3F0071 !important',
+      margin: '100px 150px',
+      "@media screen and (maxWidth: 576px)" :  {
+        background : '#000000',
+      }
     },
     origin: {
       margin: '20px 40px'
@@ -18,6 +21,9 @@ const style = {
     footerBackground: {
       background: '#FFFFFF'
     }
+
+
+    
 }
 
 export default style;
