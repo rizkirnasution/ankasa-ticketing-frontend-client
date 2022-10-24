@@ -280,8 +280,9 @@ export default function Profile() {
                         </div>
                     </div>
                 </section>
-                <Footer />
+               
             </div >
+            <Footer />
         </>
 
     )

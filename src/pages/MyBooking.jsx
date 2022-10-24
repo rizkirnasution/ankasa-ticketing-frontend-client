@@ -234,8 +234,9 @@ export default function MyBooking() {
                         )}
                     </div>
                 </section>
-                <Footer />
+               
             </div>
+            <Footer />
         </>
     );
 }
