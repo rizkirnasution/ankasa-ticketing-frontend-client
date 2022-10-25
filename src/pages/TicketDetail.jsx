@@ -51,7 +51,7 @@ export default function TicketDetail() {
       const transactionStatus = await postTransactions(
         urlParams.id,
         {
-          user_id : detailUser.id,
+          user_id: detailUser.data.id,
           totalOrder: adult + child,
           airline_id: detailProduct.data.airline_id,
           is_paid: direct,

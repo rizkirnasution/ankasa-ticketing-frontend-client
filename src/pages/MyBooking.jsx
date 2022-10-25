@@ -15,228 +15,226 @@ import iconProfile from "../assets/icons/icon-profile.svg";
 import iconMyReview from "../assets/icons/icon-myPriview.svg";
 import iconSetting from "../assets/icons/icon-setting.svg";
 import iconLogout from "../assets/icons/icon-logout.svg";
-import PhotoDefault from '../assets/photo_default.jpg'
-
+import PhotoDefault from "../assets/photo_default.jpg";
 
 export default function MyBooking() {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-    const detailUser = useSelector((state) => {
-        return state.detailUser;
-    });
+  const detailUser = useSelector((state) => {
+    return state.detailUser;
+  });
 
-    const myBooking = useSelector((state) => {
-        return state.myBooking;
-    });
-    console.log(myBooking)
+  const myBooking = useSelector((state) => {
+    return state.myBooking;
+  });
+  console.log(myBooking);
 
-    useEffect(() => {
-        dispatch(getDetailUser(localStorage.getItem("id"), navigate));
-        dispatch(getMyBooking(localStorage.getItem("id"), navigate));
-    }, [dispatch, navigate]);
+  useEffect(() => {
+    dispatch(getDetailUser(localStorage.getItem("id"), navigate));
+    dispatch(getMyBooking(localStorage.getItem("id"), navigate));
+  }, [dispatch, navigate]);
 
-    const processTicket = (id) => {
-        payTicket(id)
-            .then((result) => {
-                Swal.fire({
-                    title: "Success",
-                    text: "ticket has been pay",
-                    icon: "success",
-                });
-                dispatch(getMyBooking(navigate));
-            })
-            .catch((err) => {
-                alert(err);
-            });
-    };
-    const cancelTicket = (id) => {
+  const processTicket = (id) => {
+    payTicket(id)
+      .then((result) => {
         Swal.fire({
-            title: "Are you sure to cancel this ticket?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                deleteTicket(id, localStorage.getItem("id"))
-                    .then((response) => {
-                        Swal.fire({
-                            title: "Ticket successfully canceled",
-                            icon: "success",
-                        });
-                        dispatch(getMyBooking(navigate));
-                    })
-                    .catch((err) => {
-                        Swal.fire({
-                            title: "Cancel ticket failed",
-                            icon: "error",
-                        });
-                    });
-            }
+          title: "Success",
+          text: "ticket has been pay",
+          icon: "success",
         });
-    };
+        dispatch(getMyBooking(navigate));
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+  const cancelTicket = (id) => {
+    Swal.fire({
+      title: "Are you sure to cancel this ticket?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteTicket(id, localStorage.getItem("id"))
+          .then((response) => {
+            Swal.fire({
+              title: "Ticket successfully canceled",
+              icon: "success",
+            });
+            dispatch(getMyBooking(navigate));
+          })
+          .catch((err) => {
+            Swal.fire({
+              title: "Cancel ticket failed",
+              icon: "error",
+            });
+          });
+      }
+    });
+  };
 
-    const logout = () => {
-        localStorage.clear();
-        navigate("/login");
-    };
-    return (
-        <>
-            <div className="container-fluid myBooking ml-0 mr-0">
-                <Navbar />
-                <section className="d-flex w-100">
-                <div className="col-lg-4 col-12 side-content">
-                        <div className="card d-flex flex-column w-100">
-                            {detailUser.isLoading ? (
-                                <div>Loading</div>
-                            ) : (
-                                <div className="d-flex flex-column">
-                                    {!detailUser.data.photo && (
-                                        <>
-                                            <img
-                                                width={"200px"}
-                                                height={"200px"}
-                                                className="card-img-top"
-                                                src={`https://ui-avatars.com/api/${detailUser.data.name}?`}
-                                                alt="Card cap"
-                                            />
-                                        </>
-                                    )}
-                                    {detailUser.data.photo && (
-                                        <>
-                                            <img
-                                                width={"200px"}
-                                                height={"200px"}
-                                                className="card-img-top"
-                                                src={`https://drive.google.com/uc?export=view&id=${detailUser.data.photo}`}
-                                                alt="Card cap"
-                                            />
-                                        </>
-                                    )}
-                                    <div className="detail-profile">
-                                        {<h4>{detailUser.data.name}</h4>}
-                                        {<p>{detailUser.data.address}</p>}
-                                    </div>
-                                </div>
-                            )}
+  const logout = () => {
+    localStorage.clear();
+    navigate("/login");
+  };
+  return (
+    <>
+      <div className="container-fluid myBooking ml-0 mr-0">
+        <Navbar />
+        <section className="d-flex w-100">
+          <div className="col-lg-4 col-12 side-content">
+            <div className="card d-flex flex-column w-100">
+              {detailUser.isLoading ? (
+                <div>Loading</div>
+              ) : (
+                <div className="d-flex flex-column">
+                  {!detailUser.data.photo && (
+                    <>
+                      <img
+                        width={"200px"}
+                        height={"200px"}
+                        className="card-img-top"
+                        src={`https://ui-avatars.com/api/${detailUser.data.name}?`}
+                        alt="Card cap"
+                      />
+                    </>
+                  )}
+                  {detailUser.data.photo && (
+                    <>
+                      <img
+                        width={"200px"}
+                        height={"200px"}
+                        className="card-img-top"
+                        src={`https://drive.google.com/uc?export=view&id=${detailUser.data.photo}`}
+                        alt="Card cap"
+                      />
+                    </>
+                  )}
+                  <div className="detail-profile">
+                    {<h4>{detailUser.data.name}</h4>}
+                    {<p>{detailUser.data.address}</p>}
+                  </div>
+                </div>
+              )}
 
-                            <div className="label d-flex">
-                                <div className="label-card">Cards</div>
-                                <div className="add-card">+ Add</div>
-                            </div>
-                            <div className="credit-card d-flex flex-column">
-                                <label className="mt-3">4441 1235 5512 5551</label>
-                                <div className="detail-cc d-flex flex-row">
-                                    <p className="type-card">X Card</p>
-                                    <p className="balance">$ 1,440.2</p>
-                                </div>
-                            </div>
-                            <div className="card-setting d-flex flex-column justify-content-start">
-                                <div className="">
-                                    <img src={iconProfile} alt="" />
-                                    <label htmlFor="">Profile</label>
-                                </div>
-                                <div>
-                                    <img src={iconMyReview} alt="" />
-                                    <label htmlFor="">My Review</label>
-                                </div>
-                                <div>
-                                    <img src={iconSetting} alt="" />
-                                    <label htmlFor="">Settings</label>
-                                </div>
-                                <div>
-                                    <button onClick={logout}>
-                                        <img src={iconLogout} alt="" />
-                                        <label htmlFor="">Logout</label>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  
-                    <div className="col-sm-12 col-md-12 col-lg-8 col-12 main-content d-flex flex-column">
-                        <div className="card">
-                            <h3>MY BOOKING</h3>
-                            <div className="header-booking d-flex">
-                                <label className="my-booking">My Booking</label>
-                                <label className="order-history">Order History</label>
-                            </div>
-                        </div>
-                        {myBooking.isLoading ? (
-                            <div>Loading</div>
-                        ) : (
-                            myBooking.data.map((item, index) => {
-                                return (
-                                    <div key={index} className="card">
-                                        <div className="content d-flex flex-column">
-                                            <div className="d-flex flex-row">
-
-                                            {/* <div className=""> */}
-                                            <p className="date-departure">
-                                            {moment(item.flight_date).format("ll")}</p>
-                                            {/* </div> */}
-
-                                            <p className="date-departure">
-                                            {moment(item.flight_date).format("LT")}</p>
-                                            </div>
-                                            
-                                            <div className="destination d-flex flex-row">
-                                                <h5>{item.origin}</h5>
-                                                <img src={airplane} alt="" />
-                                                <h5>{item.destination}</h5>
-                                            </div>
-                                            <p className="code-airplane">
-                                                {item.name} {item.seat}
-                                            </p>
-                                        </div>
-                                        <div className="status">
-                                            <label className="label-status">Status</label>
-                                            {item.is_paid && (
-                                                <>
-                                                    <button className="ticket-iussue">
-                                                        Eticket issued
-                                                    </button>
-                                                </>
-                                            )}
-
-                                            {!item.is_paid && (
-                                                <>
-                                                    <div className="boxButton">
-                                                        <button className="waiting-ticket">
-                                                            Waiting for payment
-                                                        </button>
-                                                        <button
-                                                            onClick={() => cancelTicket(item.id)}
-                                                            className="cancel-ticket"
-                                                        >
-                                                            Cancel Ticket
-                                                        </button>
-                                                        <button
-                                                            onClick={() => processTicket(item.id)}
-                                                            className="pay-ticket"
-                                                        >
-                                                            Pay Ticket
-                                                        </button>
-                                                    </div>
-                                                </>
-                                            )}
-                                            <Link to={`/detail/${item.id}`}>
-                                            <div className="label-viewDetail">
-                                                <label>View Details</label>
-                                                <img src={botArrow} alt="" />
-                                            </div>
-                                            </Link>
-
-                                        </div>
-                                    </div>
-                                );
-                            })
-                        )}
-                    </div>
-                </section>
-               
+              <div className="label d-flex">
+                <div className="label-card">Cards</div>
+                <div className="add-card">+ Add</div>
+              </div>
+              <div className="credit-card d-flex flex-column">
+                <label className="mt-3">4441 1235 5512 5551</label>
+                <div className="detail-cc d-flex flex-row">
+                  <p className="type-card">X Card</p>
+                  <p className="balance">$ 1,440.2</p>
+                </div>
+              </div>
+              <div className="card-setting d-flex flex-column justify-content-start">
+                <div className="">
+                  <img src={iconProfile} alt="" />
+                  <label htmlFor="">Profile</label>
+                </div>
+                <div>
+                  <img src={iconMyReview} alt="" />
+                  <label htmlFor="">My Review</label>
+                </div>
+                <div>
+                  <img src={iconSetting} alt="" />
+                  <label htmlFor="">Settings</label>
+                </div>
+                <div>
+                  <button onClick={logout}>
+                    <img src={iconLogout} alt="" />
+                    <label htmlFor="">Logout</label>
+                  </button>
+                </div>
+              </div>
             </div>
-            <Footer />
-        </>
-    );
+          </div>
+
+          <div className="col-sm-12 col-md-12 col-lg-8 col-12 main-content d-flex flex-column">
+            <div className="card">
+              <h3>MY BOOKING</h3>
+              <div className="header-booking d-flex">
+                <label className="my-booking">My Booking</label>
+                <label className="order-history">Order History</label>
+              </div>
+            </div>
+            {myBooking.isLoading ? (
+              <div>Loading</div>
+            ) : (
+              myBooking.data.map((item, index) => {
+                return (
+                  <div key={index} className="card">
+                    <div className="content d-flex flex-column">
+                      <div className="d-flex flex-row">
+                        {/* <div className=""> */}
+                        <p className="date-departure">
+                          {moment(item.flight_date).format("ll")}
+                        </p>
+                        {/* </div> */}
+
+                        <p className="date-departure">
+                          {moment(item.flight_date).format("LT")}
+                        </p>
+                      </div>
+
+                      <div className="destination d-flex flex-row">
+                        <h5>{item.origin}</h5>
+                        <img src={airplane} alt="" />
+                        <h5>{item.destination}</h5>
+                      </div>
+                      <p className="code-airplane">
+                        {item.name} {item.seat}
+                      </p>
+                    </div>
+                    <div className="status">
+                      <label className="label-status">Status</label>
+                      {item.is_paid && (
+                        <>
+                          <button className="ticket-iussue">
+                            Eticket issued
+                          </button>
+                        </>
+                      )}
+
+                      {!item.is_paid && (
+                        <>
+                          <div className="boxButton">
+                            <button className="waiting-ticket">
+                              Waiting for payment
+                            </button>
+                            <button
+                              onClick={() => cancelTicket(item.id)}
+                              className="cancel-ticket"
+                            >
+                              Cancel Ticket
+                            </button>
+                            <button
+                              onClick={() => processTicket(item.id)}
+                              className="pay-ticket"
+                            >
+                              Pay Ticket
+                            </button>
+                          </div>
+                        </>
+                      )}
+                      <Link to={`/detail/${item.id}`}>
+                        <div className="label-viewDetail">
+                          <label>View Details</label>
+                          <img src={botArrow} alt="" />
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })
+            )}
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </>
+  );
 }
