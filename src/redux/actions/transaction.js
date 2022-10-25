@@ -67,6 +67,7 @@ export const getBookingDetails = (id, navigate) => async (dispatch) => {
         // withCredentials: true,
       }
     );
+    console.log(res)
 
     dispatch({
       type: GET_DETAIL_BOOKING_SUCCESS,

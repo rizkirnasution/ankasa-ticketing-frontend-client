@@ -12,6 +12,7 @@ const initialState = {
 };
 
 const detailMyBookingReducer = (state = initialState, action) => {
+    console.log("ini apa", action.payload)
   switch (action.type) {
       case GET_DETAIL_BOOKING_PENDING:
           return { ...state, isLoading: true };

@@ -20,9 +20,9 @@ const ETicket = () => {
   const detailUser = useSelector((state) => {
     return state.detailUser
 })
-  const { detailBooking } = useSelector(
-    (state) => state
-  );
+  const detailBooking = useSelector((state) =>{
+    return state.detailBooking
+  });
 
     useEffect(() => {
       document.title = `${process.env.REACT_APP_APP_NAME} - Booking Detail`;
@@ -35,7 +35,7 @@ const ETicket = () => {
       dispatch(getDetailUser(localStorage.getItem("id"), navigate));
     }, [dispatch, navigate, urlParams.id]);
     console.log("ini apa "+ urlParams.id);
-    console.log("detail booking nih "+detailBooking.data.data)
+    console.log("detail booking nih "+detailBooking)
     return (
       <div>
         <Card body style={style.card}>
@@ -52,7 +52,7 @@ const ETicket = () => {
             </Col>
           </Row>
           <Row>
-            <Col xs="2" className="border">
+            <Col xs="3" className="border">
               <Row className="py-2">
                 <Col className="text-center">
                 {/* {
@@ -79,7 +79,7 @@ const ETicket = () => {
               </Row>
               <Row className="py-2">
                 <Col tag="h3" className="text-center" style={style.origin}>
-                <b>ORIGIN</b>
+                <b>{detailBooking.data.origin}</b>
                 </Col>
               </Row>
               <Row className="py-2">
@@ -89,11 +89,11 @@ const ETicket = () => {
               </Row>
               <Row className="py-2">
                 <Col tag="h3" className="text-center" style={style.origin}>
-                <b>DESTINATION</b>
+                <b>{detailBooking.data.destination}</b>
                 </Col>
               </Row>
             </Col>
-            <Col xs="8" className="border text-center">
+            <Col xs="6" className="border text-center">
               <Row className="py-4">
                 <Col
                   className="justify-content-center"
@@ -109,10 +109,10 @@ const ETicket = () => {
                     </Row>
                     <Row className="text-start">
                       <Col className="ticket-data" xs="6">
-                      {detailBooking.passenger_name}
+                      {detailBooking.data.passenger_name}
                       </Col>
                       <Col className="ticket-data" xs="6">
-                      TYPE
+                      {detailBooking.data.type}
                       </Col>
                     </Row>
                   </div>
@@ -127,10 +127,12 @@ const ETicket = () => {
                     </Row>
                     <Row className="text-start">
                       <Col className="ticket-data" xs="6">
-                      {/* {moment(detailBooking.data.flight_date).format("ll")} */}
+                       
+                      {moment(detailBooking.data.flight_date).format("ll")}
                       </Col>
                       <Col className="ticket-data" xs="6">
-                      {/* {moment(detailBooking.data.flight_date).format("LT")} */}
+                       
+                      {moment(detailBooking.data.flight_date).format("LT")}
                       </Col>
                     </Row>
                   </div>
@@ -145,10 +147,12 @@ const ETicket = () => {
                     </Row>
                     <Row className="text-start">
                       <Col className="ticket-data" xs="6">
-                      {/* {detailBooking.data.code} */}
+                      {/* EE61AD */}
+                      {detailBooking.data.code}
                       </Col>
                       <Col className="ticket-data" xs="6">
-                      {/* {detailBooking.data.terminal} */}
+                      {/* Jakarta */}
+                      {detailBooking.data.terminal}
                       </Col>
                     </Row>
                   </div>
@@ -163,6 +167,7 @@ const ETicket = () => {
                     </Row>
                     <Row className="text-start">
                       <Col className="ticket-data" xs="6">
+                        3
                       {/* {detailBooking.data.gate} */}
                       </Col>
                       <Col className="ticket-data" xs="6">
@@ -173,7 +178,7 @@ const ETicket = () => {
                 </Col>
               </Row>
             </Col>
-            <Col xs="2" className="border">
+            <Col xs="3" className="border">
               <Row className="py-5">
                 <Col
                   className="text-center"
@@ -182,7 +187,7 @@ const ETicket = () => {
                 >
                   {/* <img src={barcode} alt='barcode'/> */}
 
-                   <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=rizki nasution <br> AD4F9F5F12 `} alt='barcode'/>
+                   <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${detailBooking.data.passenger_name} \n ${detailBooking.data.origin} \n ${detailBooking.data.destination} \n ${detailBooking.data.code} `} alt='barcode'/>
                 </Col>
               </Row>
             </Col>
